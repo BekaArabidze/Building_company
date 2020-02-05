@@ -1,8 +1,8 @@
-$nav-height: 7rem;
+$nav-height: 9rem;
 $nav-paddings: 0 2.3vw;
 
 .navigation {
-  background: white;
+  // background: white;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@ $nav-paddings: 0 2.3vw;
     display: inline-block;
 
     &__property {
-      width: 75%;
+      width: 90%;
       height: 100%;
     }
   }
@@ -56,7 +56,7 @@ $nav-paddings: 0 2.3vw;
           text-decoration: none;
           // font-family: "paragraph-regular";
           font-size: 1.6rem;
-          color: black;
+          color: $white;
           font-weight: 600;
           transition: all 0.2s;
 
