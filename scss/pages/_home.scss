@@ -1,6 +1,9 @@
 .hero {
-  //   margin-top: 7rem;
-
+  width: 100%;
+  height: 100%;
+  background: no-repeat url("./../../pictures/background.png");
+  background-size: cover;
+  background-position: center;
   &__container {
     // background-color: gray;
     width: 100%;
@@ -29,21 +32,25 @@
     .home_address {
       display: flex;
       justify-content: flex-end;
-      margin-top: 10rem;
+      margin-top: 5rem;
 
       &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 90%;
+        width: 75%;
         justify-content: center;
       }
       .heading {
-        width: 70%;
+        width: 100%;
       }
       .paragraph {
-        opacity: 60%;
-        width: 70%;
+        opacity: 40%;
+
+        margin-top: 1.5vw;
+        p {
+          width: 67%;
+        }
       }
     }
 
@@ -52,7 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 10rem;
+        margin-top: 10.5rem;
         a {
           color: $white;
           width: 35rem;
@@ -74,4 +81,108 @@
       }
     }
   }
+
+  .home_carusel {
+    // overflow: hidden
+    margin-top: 6vw;
+    position: relative;
+    width: 50vw;
+
+    &__container {
+      transform: translateX(-70%);
+      // width: 225rem;
+
+      padding: 2rem 2rem 6rem 0;
+      overflow: hidden;
+      width: calc(44% * 6);
+      position: absolute;
+      top: -13vw;
+      left: 6vw;
+      .carusel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+
+        //  padding: 0rem 1rem 0rem 1rem;
+        div {
+          position: relative;
+
+          margin-right: 2rem;
+          background-color: white;
+          border-radius: 14px;
+
+          height: 13vw;
+          width: 19vw;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            position: absolute;
+            border-radius: 10px;
+            padding: 0.4rem;
+          }
+        }
+      }
+    }
+
+    .blur {
+      position: absolute;
+      top: 0;
+      transform: translateY(8%);
+
+      filter: blur(25px);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .about_room {
+      width: 100%;
+
+      // background-color: gray;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+
+      height: 12rem;
+      top: 73%;
+      // left: 1.5vw;
+      z-index: -1;
+
+      .container {
+        background-color: white;
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
+        width: 50%;
+        border-radius: 5px;
+
+        .prev,
+        .next {
+          img {
+            cursor: pointer;
+            width: 3.5rem;
+          }
+        }
+
+        .next {
+          margin-left: -4vw;
+        }
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
 }
