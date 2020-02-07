@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="./glider/glider.min.css">
     <link rel="stylesheet" href="./scss/main.css" />
     <title>Building Company</title>
   </head>
@@ -11,17 +12,17 @@
 
 
     <header class="navigation">
-      <div class="navigation__wrapper">
+      <div class="navigation__wrapper" >
         <div class="navigation__logo">
           <img
             src="./pictures/logo.svg"
-            alt="Logo"
+            alt="Logo"0
             class="navigation__logo__property"
           ></img>
           
         </div>
 
-        <div class="navigation__menu">
+        <div class="navigation__menu" id="removedNav">
           <ul class="navigation__menu__list">
             <li class="navigation__menu__list__items">
               <a href="#" class="futura-medium-font regular"> our projects </a>
@@ -51,7 +52,51 @@
                         <p class="futura-medium-font regular">ut most proud projects that took our tema months to perfect and give it the face it deserved</p></div>
                     </div>
                   </div>
-                  <div class="home__carusel"></div>
+                  <div class="home_carusel">
+                    <div class="home_carusel__container">
+                      <div class="carusel" id="carusel">
+                      <div class="carusel_div" id="lastClone">
+                        <img src="./pictures/one.png" alt="">
+                        <img class="blur" src="./pictures/one.png" alt="">
+                      </div>
+                      <div class="carusel_div">
+                        <img  src="./pictures/two.png" alt="">
+                        <img class="blur" src="./pictures/two.png" alt="">
+                      </div>
+                      <div class="carusel_div">
+                        <img  src="./pictures/three.png" alt="">
+                        <img class="blur" src="./pictures/three.png" alt="">
+                      </div>
+                      <div class="carusel_div">
+                        <img  src="./pictures/four.png" alt="">
+                        <img class="blur" src="./pictures/four.png" alt="">
+                      </div>
+                      <div class="carusel_div">
+                        <img src="./pictures/five.png" alt="">
+                        <img class="blur"src="./pictures/five.png" alt="">
+                      </div>
+                      <div class="carusel_div " id="firstClone">
+                        <img src="./pictures/six.png" alt="">
+                        <img class="blur" src="./pictures/six.png" alt="">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="about_room">
+                      <div class="container" >
+                        <div class="paragraph flex">
+                          <p class="futura-bold-font medium">livin room area <span class="futura-condensed-font" > (28m) </span></p>
+                        </div>
+                        
+                      <div class="prev flex "  id="prevBtn">
+                        <img src="./pictures/prev arrow.svg" alt="">
+                      </div>
+                      <div class="next flex " id="nextBtn">
+                        <img src="./pictures/next arrow.svg" alt="">
+                      </div>
+                      </div>
+                      
+                    </div>
+                  </div>
                   <div class="home_button">
                     <div class="home_button__container">
                       <a href="#"  class="futura-medium-font medium ">Select a floor</a>
@@ -60,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <div class="hero_picture"></div>
+              <div class="hero_picture " id="main-picture" onClick="scaleOnPicture()"></div>
             </div>
         </section>
 
@@ -80,7 +125,7 @@
 
 
 
-
+        <script src="./glider/glider.min.js"></script>
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
