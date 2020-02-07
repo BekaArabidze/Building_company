@@ -83,6 +83,10 @@ html {
   font-family: "futura-condensed";
 }
 
+.futura-new-medium {
+  font-family: "futura-new-medium";
+}
+
 .hero__container {
   width: 100%;
   height: 100vh;
@@ -94,7 +98,7 @@ html {
 }
 
 .hero .hero_picture {
-  background: no-repeat url("./../../pictures/main-pic.png");
+  background: no-repeat url("../../pictures/main-pic.png");
   background-size: cover;
   background-position: center;
 }
