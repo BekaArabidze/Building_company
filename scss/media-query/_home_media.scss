@@ -1,0 +1,95 @@
+@media only screen and (max-width: 1500px) {
+  .about_room {
+    .container {
+      width: 40rem !important;
+      left: initial !important;
+    }
+  }
+
+  .hero .hero_about .home_address__container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .navigation {
+    padding: $padding !important;
+
+    .navigation__logo__property {
+      width: 70% !important;
+    }
+
+    &__menu {
+      width: 55% !important;
+    }
+  }
+
+  .hero {
+    &__container {
+      height: initial;
+      grid-template-columns: initial;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .hero_picture {
+      grid-row: 1/2;
+    }
+
+    .hero_about {
+      &__container {
+        grid-template-rows: 1fr 1fr 0.8fr;
+      }
+      .home_button {
+        align-self: self-end;
+        height: initial;
+        a {
+          width: 33rem;
+          padding: 2.5rem;
+        }
+      }
+      .home_address {
+        &__container {
+          width: 100%;
+          // margin-top: 8.5rem;
+          margin: initial;
+        }
+        margin: initial;
+        padding: $padding;
+        .paragraph {
+          width: 100%;
+          p {
+            width: 82%;
+          }
+        }
+      }
+    }
+
+    .home_carusel {
+      overflow: hidden;
+      width: initial;
+      height: 100%;
+      .about_room {
+        .container {
+          width: 100%;
+          top: -11rem;
+          left: initial;
+        }
+      }
+      &__container {
+        transform: translateX(-17%);
+
+        top: -29vw;
+        padding: 2rem 2rem 6rem 0;
+
+        .carusel {
+          height: 100%;
+          // display: none;
+          div {
+            height: 34vw;
+            width: 44vw;
+          }
+        }
+      }
+    }
+  }
+}

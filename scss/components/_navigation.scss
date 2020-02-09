@@ -12,13 +12,14 @@ $nav-paddings: 0 2.3vw;
   z-index: 99;
   position: fixed;
   top: 0;
+  transition: 0.2s all ease-in;
 
   &__wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: $max-width;
+    // max-width: $max-width;
   }
 
   &__logo {
@@ -63,6 +64,127 @@ $nav-paddings: 0 2.3vw;
           &:hover {
             color: $hover-on-nav;
             transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+
+  .mobile_nav {
+    display: none;
+  }
+  .new-opacity {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+.nav-scrolled {
+  background-color: white;
+  transition: 0.2s all ease-in;
+  box-shadow: $box-shadow-for-navigation;
+  a {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  // .navigation {
+  //   background-color: white;
+  // }
+  .navigation__menu {
+    display: none;
+  }
+  .hamburger {
+    display: block !important;
+    width: 4rem;
+    height: 100%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+  .active-burger {
+    svg {
+      path {
+        stroke: #fdaf19;
+        filter: drop-shadow(0px 0px 7px rgba(255, 0, 0, 0.8));
+      }
+    }
+  }
+  .new-nav {
+    background-color: white;
+    transition: 0.1s all ease;
+  }
+  .new-opacity {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transition: all 0.4s ease;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+  }
+
+  .mobile_nav {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
+    display: block;
+    transition: all 0.4s;
+    width: 100%;
+    // opacity: 1;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    box-shadow: 0px 100px 60px -24px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    background-color: white;
+
+    display: block !important;
+
+    &__container {
+      width: 100%;
+
+      background-color: white;
+      display: flex;
+
+      align-items: center;
+      flex-direction: column;
+
+      .mobile__menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__list {
+          flex-direction: column;
+
+          width: 100%;
+
+          list-style: none;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+
+          &__items {
+            padding: 6vw 0vw;
+            a {
+              text-decoration: none;
+              // font-family: "paragraph-regular";
+              // font-size: 1.6rem;
+              color: black;
+              font-weight: 600;
+              font-size: 1.8rem;
+
+              &:hover {
+                color: gray;
+              }
+            }
           }
         }
       }

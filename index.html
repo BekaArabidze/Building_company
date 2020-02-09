@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="./glider/glider.min.css">
+   
     <link rel="stylesheet" href="./scss/main.css" />
+    <link rel="stylesheet" href="./glider/glider.min.css">
     <title>Building Company</title>
   </head>
   <body>
@@ -36,7 +37,49 @@
             </li>
           </ul>
         </div>
+
+         <!---   MOBILE NAV -->
+         <div class="new-opacity ">
+          <div class="mobile_nav__container">
+            <div class="mobile__menu">
+              <ul class="mobile__menu__list">
+              <li class="mobile__menu__list__items">
+                <a href="#" class="futura-medium-font regular"> our projects </a>
+              </li>
+              
+              <li class="mobile__menu__list__items">
+                <a href="#" class="futura-medium-font regular"> about </a>
+              </li>
+              <li class="mobile__menu__list__items">
+                <a href="#" class="futura-medium-font regular"> contact </a>
+              </li>
+                
+              </ul>
+            </div>
+            
+          </div>
         </div>
+
+        <div onClick="toggleOnNav()" class="hamburger">
+           <svg
+                width="41"
+                height="41"
+                viewBox="0 0 41 41"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.999453 12.4625L28.3227 39.7857M11.7772 12.0826L29.418 29.7234M22.8404 11.0836L30.161 18.4041"
+                  stroke="#151F28"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+        </div>
+
+
+       
         </header>
 
         <section class="hero">
@@ -53,9 +96,9 @@
                     </div>
                   </div>
                   <div class="home_carusel">
-                    <div class="home_carusel__container">
-                      <div class="carusel" id="carusel">
-                      <div class="carusel_div" id="lastClone">
+                    <div class="home_carusel__container ">
+                      <div class="carusel">
+                      <div class="carusel_div " id="lastClone">
                         <img src="./pictures/one.png" alt="">
                         <img class="blur" src="./pictures/one.png" alt="">
                       </div>
@@ -80,13 +123,34 @@
                         <img class="blur" src="./pictures/six.png" alt="">
                       </div>
                     </div>
+
+                    <!-- <div class="glider-contain">
+                      <div class="glider">
+                        <div>your content here</div>
+                        <div>your content here</div>
+                        <div>your content here</div>
+                        <div>your content here</div>
+                      </div>
+                    
+                      <button role="button" aria-label="Previous" class="glider-prev">«</button>
+                      <button role="button" aria-label="Next" class="glider-next">»</button>
+                      <div role="tablist" class="dots"></div>
+                    </div> -->
                     </div>
                     <div class="about_room">
                       <div class="container" >
                         <div class="paragraph flex">
-                          <p class="futura-bold-font medium">livin room area <span class="futura-condensed-font" > (28m) </span></p>
+                         
+                          <ul>
+                            <li id="last" class= "display_none"> <p class="futura-bold-font medium">livin room area <span class="futura-condensed-font" > (18m) </span></p></li>
+                            <li class= "display_none"> <p class="futura-bold-font medium">bed room area <span class="futura-condensed-font" > (58m) </span></p></li>
+                            <li class= "display_none"> <p class="futura-bold-font medium">hell room area <span class="futura-condensed-font" > (68m) </span></p></li>
+                            <li class= "display_none"> <p class="futura-bold-font medium">heave room area <span class="futura-condensed-font" > (58m) </span></p></li>
+                            <li class= "display_none"> <p class="futura-bold-font medium">beqa room area <span class="futura-condensed-font" > (48m) </span></p></li>
+                            <li id="first"> <p class="futura-bold-font medium">abara room area <span class="futura-condensed-font" > (28m) </span></p></li>
+                          </ul>
                         </div>
-                        
+                      
                       <div class="prev flex "  id="prevBtn">
                         <img src="./pictures/prev arrow.svg" alt="">
                       </div>
@@ -105,7 +169,16 @@
                   </div>
                 </div>
               </div>
-              <div class="hero_picture " id="main-picture" onClick="scaleOnPicture()"></div>
+              <div class="hero_picture " id="main-picture" onClick="scaleOnPicture()">
+                <div class="carousel_container">
+                  <div class="carousel_slide">
+                    <!-- <img src="./pictures/six.png" alt=""> -->
+                    <img src="./pictures/main-pic.png" alt="">
+                    
+                  </div>
+                </div>
+               
+              </div>
             </div>
         </section>
 
@@ -125,7 +198,7 @@
 
 
 
-        <script src="./glider/glider.min.js"></script>
+        <script src="./glider/glider.min.js" charset="utf-8"></script>
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
