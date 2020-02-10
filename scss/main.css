@@ -123,17 +123,6 @@ html {
      object-fit: cover;
 }
 
-.hero .hero_about {
-  width: 100%;
-  width: 100%;
-  height: 100%;
-  background: no-repeat url("/../../pictures/background.png");
-  background-size: cover;
-  background-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .hero .hero_about__container {
   width: 100%;
   height: 100%;
@@ -203,9 +192,18 @@ html {
 .hero .hero_about .home_button__container {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  position: relative;
 }
 
-.hero .hero_about .home_button__container a {
+.hero .hero_about .home_button__container .select_floor img {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 20%;
+}
+
+.hero .hero_about .home_button__container .select_floor a {
   color: #ffff;
   width: 35rem;
   height: 100%;
