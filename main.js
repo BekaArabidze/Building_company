@@ -1,96 +1,138 @@
 function scaleOnPicture() {
   const body_width = document.body.clientWidth;
-  let el = document.getElementById("main-picture");
+  let carousel_slide = document.querySelector(".carousel_slide");
   let nav = document.getElementById("removedNav");
-  // el.classList.toggle("after-clicked");
-  // nav.classList.toggle("remode_nav");
-
   if (body_width >= 600) {
-    el.classList.toggle("after-clicked");
-    nav.classList.toggle("remode_nav");
+    carousel_slide.classList.toggle("after-clicked");
+    nav.classList.toggle("removed_nav");
   } else {
-    el.classList.remove("after-clicked");
+    carousel_slide.classList.remove("after-clicked");
   }
 }
+
+////  ====================================v
+///================== CARUSEL
 
 const carusel = document.querySelector(".carusel");
 const caruselImages = document.querySelectorAll(".carusel_div");
 
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
+const backImage = document.querySelector(".carousel_slide");
 
-let counter = 1;
+let amountOfClicks = 0;
 const size = caruselImages[0].clientWidth;
 
 let total = 0;
-let amount = Math.floor(
-  document.querySelector(".carusel").clientWidth / 6 -
+let caruselImageWidth = Math.floor(
+  getComputedStyle(document.querySelectorAll(".carusel_div")[0]).width.split(
+    "px"
+  )[0]
+);
+let caruselImageRightMargin = parseInt(
+  getComputedStyle(
+    document.querySelectorAll(".carusel_div")[0]
+  ).marginRight.split("px")[0]
+);
+
+let amount = caruselImageWidth + caruselImageRightMargin;
+
+document.addEventListener("resize", () => {
+  amountOfClicks = 0;
+  size = caruselImages[0].clientWidth;
+
+  total = 0;
+  caruselImageWidth = Math.floor(
+    getComputedStyle(document.querySelectorAll(".carusel_div")[0]).width.split(
+      "px"
+    )[0]
+  );
+  caruselImageRightMargin = parseInt(
     getComputedStyle(
       document.querySelectorAll(".carusel_div")[0]
     ).marginRight.split("px")[0]
-);
-
-document.addEventListener("resize", () => {
-  amount =
-    document.querySelector(".carusel").clientWidth /
-      document.querySelectorAll(".carusel_div").length -
-    getComputedStyle(
-      document.querySelectorAll(".carusel_div")[0]
-    ).marginRight.split("px")[0];
+  );
+  amount = caruselImageWidth + caruselImageRightMargin;
 });
 
 nextBtn.addEventListener("click", () => {
-  if (counter >= caruselImages.length - 1) return;
-  carusel.style.transition = "transform 0.5s ease-in-out";
-  counter++;
+  amountOfClicks++;
+  console.log(amountOfClicks);
 
-  total = total + amount;
+  if (amountOfClicks == caruselImages.length) {
+    total = 0;
+    amountOfClicks = 0;
+    if (amountOfClicks == 0) {
+      backImage.style.backgroundImage = 'url("/../../pictures/six.png")';
+    }
 
-  console.log(total);
+    console.log("reverse");
+  } else {
+    if (amountOfClicks <= 0) {
+      prevBtn.classList.add("btn_opacity");
+    } else {
+      prevBtn.classList.remove("btn_opacity");
+    }
 
+    if (amountOfClicks == 1 || caruselImages[5]) {
+      backImage.style.backgroundImage = 'url("/../../pictures/five.png")';
+      // caruselImages.style.backgroundColor = "#ffffff";
+      // caruselImages.style.borderRadius = "15"
+      caruselImages[5].classList.add("color_radius");
+    } else if (amountOfClicks == 2) {
+      backImage.style.backgroundImage = 'url("/../../pictures/four.png")';
+    } else if (amountOfClicks == 3) {
+      backImage.style.backgroundImage = 'url("/../../pictures/three.png")';
+    } else if (amountOfClicks == 4) {
+      backImage.style.backgroundImage = 'url("/../../pictures/two.png")';
+    } else if (amountOfClicks == 5) {
+      backImage.style.backgroundImage = 'url("/../../pictures/one.png")';
+    } else {
+      console.log("error");
+    }
+
+    total = total + amount;
+  }
   carusel.style.transform = `translateX(${total}px)`;
-
-  // var rect = caruselImages[0].getBoundingClientRect();
-  // var top = (caruselImages[0].style.top = rect.top + "px");
-  // var left = (caruselImages[0].style.left = rect.left + "px");
-
-  // console.log(top + " Top");
-  // console.log(left + " left");
-
-  console.log("next");
 });
 
 prevBtn.addEventListener("click", () => {
-  if (counter <= 0) return;
-  if (total >= 0) {
-    carusel.style.transition = "transform 0.5s ease-in-out";
-    counter--;
-    total = total - amount;
+  amountOfClicks--;
+  console.log(amountOfClicks);
+
+  if (amountOfClicks <= 0) {
+    total = 0;
+    amountOfClicks = 0;
     carusel.style.transform = `translateX(${total}px)`;
-    console.log("total");
+    if (amountOfClicks == 0) {
+      backImage.style.backgroundImage = 'url("/../../pictures/six.png")';
+    }
+    prevBtn.classList.add("btn_opacity");
+    prevBtn.removeEventListener("click", this);
   } else {
-    carusel.style.transition = "none";
-    console.log("naklebia");
-  }
-});
-
-carusel.addEventListener("transitionend", () => {
-  if (caruselImages[counter].id === "lastClone" && total >= 1900) {
-    carusel.style.transition = "none";
-    counter = carusel.length - 1;
-
-    total = total + amount;
-    carusel.style.transform = `translateX(${total}px)`;
-  }
-  if (caruselImages[counter].id === "firstClone") {
-    carusel.style.transition = "none";
-    counter = carusel.length - counter;
+    if (amountOfClicks == 0) {
+      backImage.style.backgroundImage = 'url("/../../pictures/six.png")';
+    } else if (amountOfClicks == 1) {
+      backImage.style.backgroundImage = 'url("/../../pictures/five.png")';
+    } else if (amountOfClicks == 2) {
+      backImage.style.backgroundImage = 'url("/../../pictures/four.png")';
+    } else if (amountOfClicks == 3) {
+      backImage.style.backgroundImage = 'url("/../../pictures/three.png")';
+    } else if (amountOfClicks == 4) {
+      backImage.style.backgroundImage = 'url("/../../pictures/two.png")';
+    } else if (amountOfClicks == 5) {
+      backImage.style.backgroundImage = 'url("/../../pictures/one.png")';
+    } else {
+      console.log("error");
+    }
+    prevBtn.classList.remove("btn_opacity");
     total = total - amount;
-    carusel.style.transform = `translateX(${total}px)`;
   }
-  console.log("fired");
+  carusel.style.transform = `translateX(${total}px)`;
 });
 
+////  ====================================v
+///==================
 //// ==================== FOR-NAVIGATION-WHEN SCROLLL
 const navigation = document.querySelector(".navigation");
 const sectionHero = document.querySelector(".hero_picture");
@@ -121,6 +163,9 @@ const toggleOnNav = () => {
   const mobile_nav = document.querySelector(".new-opacity");
   const active_hamburger = document.querySelector(".hamburger");
   const new_nav = document.querySelector(".navigation");
+  const body = document.body;
+
+  body.classList.toggle("body-overflow");
 
   mobile_nav.classList.toggle("mobile_nav");
   active_hamburger.classList.toggle("active-burger");

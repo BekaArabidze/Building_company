@@ -88,7 +88,6 @@ html {
 }
 
 .hero__container {
-  width: 100%;
   height: 100vh;
   display: -ms-grid;
   display: grid;
@@ -105,31 +104,33 @@ html {
   z-index: 20;
 }
 
-.hero .hero_picture .carousel_container {
+.hero .hero_picture .carousel_slide {
   width: 100%;
-  margin: auto;
   height: 100%;
+  background: no-repeat url("/../../pictures/six.png");
+  background-size: cover;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.8s all ease;
+  transition: 0.8s all ease;
 }
 
-.hero .hero_picture .carousel_container .carousel_slide {
-  width: 100%;
-  height: 100%;
-}
-
-.hero .hero_picture .carousel_container .carousel_slide img {
-  width: 100%;
-  height: 100%;
+.hero .hero_about {
+  background: no-repeat url("/../../pictures/background.png");
+  background-size: cover;
+  background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .hero .hero_about__container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 0.4fr;
-      grid-template-rows: 1fr 1fr 0.4fr;
+  -ms-grid-rows: 1fr 1fr auto;
+      grid-template-rows: 1fr 1fr auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -203,7 +204,7 @@ html {
   left: 20%;
 }
 
-.hero .hero_about .home_button__container .select_floor a {
+.hero .hero_about .home_button__container .select_floor .btn {
   color: #ffff;
   width: 35rem;
   height: 100%;
@@ -221,12 +222,12 @@ html {
   overflow: hidden;
   z-index: 5;
   position: relative;
-  height: 100%;
+  height: 90%;
 }
 
 .hero .home_carusel__container {
-  -webkit-transform: translateX(-55%);
-          transform: translateX(-55%);
+  -webkit-transform: translateX(-56%);
+          transform: translateX(-56%);
   z-index: 3;
   padding: 1vw 1vw 2.5vw 0vw;
   overflow: hidden;
@@ -248,18 +249,19 @@ html {
       -ms-flex-pack: start;
           justify-content: start;
   width: 100%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-.hero .home_carusel__container .carusel div {
+.hero .home_carusel__container .carusel .carusel_div {
   position: relative;
   margin-right: 2rem;
-  background-color: white;
-  border-radius: 14px;
-  height: 12vw;
+  border-radius: 10px;
+  height: 10vw;
   width: 17vw;
 }
 
-.hero .home_carusel__container .carusel div img {
+.hero .home_carusel__container .carusel .carusel_div img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -273,11 +275,13 @@ html {
 .hero .home_carusel .blur {
   position: absolute;
   top: 0;
-  -webkit-transform: translateY(5%);
-          transform: translateY(5%);
+  -webkit-transform: translateY(11%);
+          transform: translateY(11%);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-filter: contrast(53px);
+          filter: contrast(53px);
   opacity: 0.5;
-  -webkit-filter: blur(25px);
-          filter: blur(25px);
   opacity: 0.3;
   z-index: -1;
 }
@@ -381,17 +385,31 @@ html {
 }
 
 .after-clicked {
-  -webkit-transform: translateX(-50%) scaleX(1) scaleY(0.9);
-          transform: translateX(-50%) scaleX(1) scaleY(0.9);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   -webkit-transition: 0.8s all ease;
   transition: 0.8s all ease;
   z-index: 20;
+  background-size: contain !important;
 }
 
-.remode_nav {
+.removed_nav {
   display: none !important;
   -webkit-transition: all 0.5 ease;
   transition: all 0.5 ease;
+}
+
+.btn_opacity {
+  opacity: 50% !important;
+}
+
+.body-overflow {
+  overflow: hidden;
+}
+
+.color_radius {
+  background-color: #ffffff;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -427,18 +445,18 @@ html {
     grid-row: 1/2;
   }
   .hero .hero_about__container {
-    -ms-grid-rows: 1fr 1fr 0.8fr;
-        grid-template-rows: 1fr 1fr 0.8fr;
+    -ms-grid-rows: 1fr 1fr auto;
+        grid-template-rows: 1fr 1fr auto;
+  }
+  .hero .hero_about .btn {
+    width: 30rem !important;
+    padding: 2.5rem !important;
   }
   .hero .hero_about .home_button {
     -ms-flex-item-align: self-end;
         -ms-grid-row-align: self-end;
         align-self: self-end;
     height: initial;
-  }
-  .hero .hero_about .home_button a {
-    width: 33rem;
-    padding: 2.5rem;
   }
   .hero .hero_about .home_address {
     margin: initial;
@@ -457,25 +475,23 @@ html {
   .hero .home_carusel {
     overflow: hidden;
     width: initial;
-    height: 100%;
   }
   .hero .home_carusel .about_room .container {
     width: 100%;
-    top: -11rem;
+    top: -8rem;
     left: initial;
   }
   .hero .home_carusel__container {
-    -webkit-transform: translateX(-17%);
-            transform: translateX(-17%);
-    top: -29vw;
+    -webkit-transform: translateX(-61%);
+            transform: translateX(-61%);
     padding: 2rem 2rem 6rem 0;
   }
   .hero .home_carusel__container .carusel {
     height: 100%;
   }
   .hero .home_carusel__container .carusel div {
-    height: 34vw;
-    width: 44vw;
+    height: 25vw;
+    width: 40.5vw;
   }
 }
 
@@ -631,6 +647,8 @@ html {
     left: 0%;
   }
   .mobile_nav {
+    -webkit-box-shadow: 0px 100px 60px -24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 100px 60px -24px rgba(0, 0, 0, 0.3);
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
     display: block;
@@ -640,8 +658,6 @@ html {
     position: absolute;
     top: 100%;
     right: 0%;
-    -webkit-box-shadow: 0px 100px 60px -24px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 100px 60px -24px rgba(0, 0, 0, 0.1);
     z-index: 99;
     background-color: white;
     display: block !important;
