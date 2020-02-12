@@ -237,7 +237,7 @@
         .next,
         .prev {
           cursor: pointer;
-          margin-left: -3vw;
+          margin-left: -3rem;
           z-index: 9;
         }
       }
@@ -274,6 +274,6 @@
 }
 
 .color_radius {
-  background-color: #ffffff;
-  border-radius: 15px;
+  background-color: red;
+  border-radius: 15px !important;
 }
