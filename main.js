@@ -66,7 +66,7 @@ nextBtn.addEventListener("click", () => {
     total = 0;
     amountOfClicks = 0;
     if (amountOfClicks == 0) {
-      backImage.style.backgroundImage = 'url("/../../pictures/six.png")';
+      backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
       description.innerHTML = "abara room area ";
     }
 
@@ -114,7 +114,7 @@ prevBtn.addEventListener("click", () => {
     amountOfClicks = 0;
     carusel.style.transform = `translateX(${total}px)`;
     if (amountOfClicks == 0) {
-      backImage.style.backgroundImage = 'url("/../../pictures/six.png")';
+      backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
       description.innerHTML = "abara room area ";
     }
     prevBtn.classList.add("btn_opacity");
