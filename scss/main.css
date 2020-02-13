@@ -56,7 +56,7 @@ html {
 }
 
 .big {
-  font-size: calc( 20px + (40 - 20) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .regular {
@@ -143,7 +143,7 @@ html {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-top: 5rem;
+  margin-top: 4vw;
 }
 
 .hero .hero_about .home_address__container {
@@ -202,6 +202,7 @@ html {
           transform: translate(-50%, -50%);
   top: 50%;
   left: 20%;
+  width: 20%;
 }
 
 .hero .hero_about .home_button__container .select_floor .btn {
@@ -218,6 +219,11 @@ html {
   text-decoration: none;
 }
 
+.hero .hero_about .home_button__container .select_floor .btn p {
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
+}
+
 .hero .home_carusel {
   overflow: hidden;
   z-index: 5;
@@ -226,10 +232,10 @@ html {
 }
 
 .hero .home_carusel__container {
-  -webkit-transform: translateX(-56%);
-          transform: translateX(-56%);
+  -webkit-transform: translateX(-55%);
+          transform: translateX(-55%);
   z-index: 3;
-  padding: 1vw 1vw 2.5vw 0vw;
+  padding: 1vw 1vw 1.3vw 0vw;
   overflow: hidden;
   width: calc(45% * 6);
 }
@@ -275,10 +281,10 @@ html {
 .hero .home_carusel .blur {
   position: absolute;
   top: 0;
-  -webkit-transform: translateY(11%);
-          transform: translateY(11%);
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
+  -webkit-transform: translateY(8%);
+          transform: translateY(8%);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
   -webkit-filter: contrast(53px);
           filter: contrast(53px);
   opacity: 0.5;
@@ -319,8 +325,8 @@ html {
   -webkit-box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
   width: 45%;
-  border-radius: 5px;
-  height: 13rem;
+  border-radius: 14px;
+  height: 7.4vw;
   position: absolute;
   left: 13.5vw;
   top: -4vw;
@@ -356,16 +362,24 @@ html {
   margin-right: 1vw;
 }
 
-.hero .home_carusel .about_room .container .prev img,
-.hero .home_carusel .about_room .container .next img {
+.hero .home_carusel .about_room .container .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .home_carusel .about_room .container .btn .prev img,
+.hero .home_carusel .about_room .container .btn .next img {
   cursor: pointer;
   width: 3.5rem;
 }
 
-.hero .home_carusel .about_room .container .next,
-.hero .home_carusel .about_room .container .prev {
+.hero .home_carusel .about_room .container .btn .next,
+.hero .home_carusel .about_room .container .btn .prev {
   cursor: pointer;
-  margin-left: -3rem;
   z-index: 9;
 }
 
@@ -381,7 +395,7 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 4rem;
+  margin-top: 2vw;
 }
 
 .after-clicked {
@@ -412,9 +426,137 @@ html {
   border-radius: 15px !important;
 }
 
+main .container {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.2fr 1fr;
+      grid-template-columns: 2.2fr 1fr;
+}
+
+main .building_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+main .building_section__model {
+  width: 100%;
+  height: 100%;
+  background: no-repeat url("/../../pictures/building.png");
+  background-size: cover;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .building_section__btn {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 18%;
+  left: 9%;
+  width: 7rem;
+  height: 7rem;
+  background-color: white;
+  border-radius: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -8px -8px 24px rgba(255, 255, 255, 0.94), 8px 8px 20px rgba(0, 0, 0, 0.22);
+          box-shadow: -8px -8px 24px rgba(255, 255, 255, 0.94), 8px 8px 20px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+main .work_section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+}
+
+main .work_section .introduction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+main .work_section .introduction:after {
+  content: "";
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: no-repeat url("/../../pictures/circle.png");
+  background-size: cover;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 39%;
+  left: 50%;
+  z-index: -1;
+}
+
+main .work_section__container {
+  width: 70%;
+}
+
+main .work_section__container .paragraph {
+  margin-top: 2vw;
+}
+
+main .work_section__gif {
+  background-color: #ffa800;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .work_section__gif .video {
+  background: url("/../../pictures/comp-1.gif");
+  background-size: cover;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50%;
+  height: 80%;
+}
+
 @media only screen and (max-width: 1500px) {
+  .home_button {
+    -ms-flex-item-align: self-end;
+        -ms-grid-row-align: self-end;
+        align-self: self-end;
+    height: initial;
+  }
+  .home_button .select_floor .btn {
+    width: 25vw !important;
+    padding: 2vw 0.5vw !important;
+  }
   .about_room .container {
-    width: 40rem !important;
+    width: 55% !important;
     left: initial !important;
   }
   .hero .hero_about .home_address__container {
@@ -432,6 +574,10 @@ html {
   .navigation__menu {
     width: 55% !important;
   }
+  .hero .about_room .container {
+    width: 100% !important;
+    left: initial !important;
+  }
   .hero__container {
     height: initial;
     -ms-grid-columns: initial;
@@ -448,15 +594,15 @@ html {
     -ms-grid-rows: 1fr 1fr auto;
         grid-template-rows: 1fr 1fr auto;
   }
-  .hero .hero_about .btn {
-    width: 30rem !important;
-    padding: 2.5rem !important;
-  }
   .hero .hero_about .home_button {
     -ms-flex-item-align: self-end;
         -ms-grid-row-align: self-end;
         align-self: self-end;
     height: initial;
+  }
+  .hero .hero_about .home_button .select_floor .btn {
+    width: 25rem !important;
+    padding: 3rem 0rem 2rem 0rem !important;
   }
   .hero .hero_about .home_address {
     margin: initial;
@@ -478,7 +624,6 @@ html {
   }
   .hero .home_carusel .about_room .container {
     width: 100%;
-    top: -8rem;
     left: initial;
   }
   .hero .home_carusel__container {
