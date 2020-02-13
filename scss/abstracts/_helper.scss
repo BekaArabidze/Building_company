@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vw;
+}
+
+.after-clicked {
+  transform: translateX(-50%);
+  transition: 0.8s all ease;
+  z-index: 20;
+  background-size: contain !important;
+}
+
+.removed_nav {
+  display: none !important;
+  transition: all 0.5 ease;
+}
+
+.btn_opacity {
+  opacity: 50% !important;
+}
+
+.body-overflow {
+  overflow: hidden;
+}
+
+.color_radius {
+  background-color: red;
+  border-radius: 15px !important;
+}
+.blur {
+  position: absolute;
+  top: 0;
+  transform: translateY(8%);
+  filter: blur(4px);
+  filter: contrast(53px);
+  opacity: 0.5;
+  opacity: 0.3;
+  z-index: -1;
+}

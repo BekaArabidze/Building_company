@@ -1,12 +1,8 @@
 .hero {
   &__container {
-    // background-color: gray;
-    // width: 100%;
     height: 100vh;
-    // max-width: 191rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // padding: 0 2.3vw;
   }
   .hero_picture {
     width: 100%;
@@ -18,24 +14,17 @@
     z-index: 20;
 
     .carousel_slide {
-      // display: flex;
       width: 100%;
       height: 100%;
       background: no-repeat url("/../../pictures/main-pic.png");
-      background-size: cover;
-      background-position: center;
-      object-fit: cover;
+      @include backgroundProperty;
       transition: 0.8s all ease;
     }
   }
 
   .hero_about {
-    // width: 100%;
-    // height: 100%;
     background: no-repeat url("/../../pictures/background.png");
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
+    @include backgroundProperty;
 
     &__container {
       width: 100%;
@@ -55,7 +44,6 @@
         align-items: center;
         width: 75%;
         justify-content: center;
-        // margin-right: -2vw;
       }
       .heading {
         width: 100%;
@@ -81,6 +69,8 @@
         position: relative;
 
         .select_floor {
+          cursor: pointer;
+          // transition: all 2s ease;
           img {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -104,12 +94,6 @@
             p {
               transform: translateX(10%);
             }
-
-            //   &:hover {
-            //     color: $light-orange;
-            //     background-color: $white;
-            //     box-shadow: initial;
-            //   }
           }
         }
       }
@@ -137,18 +121,14 @@
         flex-direction: row;
         align-items: center;
         justify-content: start;
-        // width: 2535px;
-        // width: 2600px;
+
         width: 100%;
         transition: 0.5s ease-in-out;
-        //  padding: 0rem 1rem 0rem 1rem;
+
         .carusel_div {
           position: relative;
-
           margin-right: 2rem;
-          // background-color: white;
           border-radius: 10px;
-
           height: 10vw;
 
           width: 17vw;
@@ -165,24 +145,12 @@
       }
     }
 
-    .blur {
-      position: absolute;
-      top: 0;
-      transform: translateY(8%);
-      filter: blur(4px);
-      filter: contrast(53px);
-      opacity: 0.5;
-      opacity: 0.3;
-      z-index: -1;
-    }
-
     .about_room {
       width: 100%;
       display: flex;
       align-content: center;
       justify-content: center;
       align-items: center;
-      // position: absolute;
       z-index: -1;
       height: 100%;
       position: relative;
@@ -223,10 +191,9 @@
 
             li {
               list-style-type: none;
-              // width: 100%;
+
               height: 100%;
               margin-right: 1vw;
-              // display: block;
             }
           }
         }
@@ -255,39 +222,6 @@
   }
 }
 
-.flex {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2vw;
-}
-
-.after-clicked {
-  transform: translateX(-50%);
-  transition: 0.8s all ease;
-  z-index: 20;
-  background-size: contain !important;
-}
-
-.removed_nav {
-  display: none !important;
-  transition: all 0.5 ease;
-}
-
-.btn_opacity {
-  opacity: 50% !important;
-}
-
-.body-overflow {
-  overflow: hidden;
-}
-
-.color_radius {
-  background-color: red;
-  border-radius: 15px !important;
-}
-
 main {
   .container {
     height: 100vh;
@@ -303,9 +237,7 @@ main {
       width: 100%;
       height: 100%;
       background: no-repeat url("/../../pictures/building.png");
-      background-size: cover;
-      background-position: center;
-      object-fit: cover;
+      @include backgroundProperty;
     }
 
     &__btn {
@@ -342,9 +274,7 @@ main {
         width: 100%;
         height: 100%;
         background: no-repeat url("/../../pictures/circle.png");
-        background-size: cover;
-        background-position: center;
-        object-fit: cover;
+        @include backgroundProperty;
         top: 39%;
         left: 50%;
         z-index: -1;
@@ -356,6 +286,7 @@ main {
 
       .paragraph {
         margin-top: 2vw;
+        opacity: 60%;
       }
     }
 
@@ -366,12 +297,25 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      .yellow {
+        width: 100%;
+        height: 100%;
+        background-color: #ffa800;
+        transform: translateY(-3%);
+        filter: blur(20px);
+        filter: contrast(50px);
+        opacity: 0.5;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 46%;
+        left: 50%;
+        z-index: -1;
+      }
 
       .video {
         background: url("/../../pictures/comp-1.gif");
-        background-size: cover;
-        background-position: center;
-        object-fit: cover;
+        @include backgroundProperty;
         width: 50%;
         height: 80%;
       }

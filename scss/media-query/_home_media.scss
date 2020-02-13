@@ -116,3 +116,29 @@
     }
   }
 }
+@media only screen and (max-width: 750px) {
+  main {
+    .container {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: initial;
+
+      .building_section__btn {
+        display: none;
+      }
+
+      .work_section {
+        grid-template-rows: 1fr 1fr;
+        &__container {
+          padding: 0 4vw !important;
+          width: initial;
+        }
+
+        &__gif {
+          .video {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}

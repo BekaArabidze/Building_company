@@ -118,11 +118,11 @@ $nav-paddings: 0 2.3vw;
   }
   .new-nav {
     background-color: white;
-    transition: 0.1s all ease;
+    transition: 0.5s all ease;
   }
   .new-opacity {
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     width: 100%;
     display: block;
     position: absolute;
@@ -134,7 +134,7 @@ $nav-paddings: 0 2.3vw;
     box-shadow: 0px 100px 60px -24px rgba(0, 0, 0, 0.3);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
     display: block;
-    transition: all 0.4s;
+    transition: all 0.5s ease;
     width: 100%;
     // opacity: 1;
     position: absolute;

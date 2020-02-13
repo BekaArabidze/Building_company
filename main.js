@@ -69,6 +69,7 @@ nextBtn.addEventListener("click", () => {
       backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
       description.innerHTML = "abara room area ";
     }
+    // prevBtn.classList.remove("btn_opacity");
 
     console.log("reverse");
   } else {
@@ -151,7 +152,7 @@ const navigation = document.querySelector(".navigation");
 const sectionHero = document.querySelector(".hero_picture");
 
 const sectionOptions = {
-  rootMargin: "-200px 0px 0px 0px"
+  rootMargin: "-600px 0px 0px 0px"
 };
 
 const sectionOneObserver = new IntersectionObserver(function(
@@ -184,4 +185,27 @@ const toggleOnNav = () => {
   active_hamburger.classList.toggle("active-burger");
   new_nav.classList.toggle("new-nav");
   console.log("clicked");
+};
+// Scroll to specific values
+// scrollTo is the same
+
+const buttonScrolled = () => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  });
+
+  // Scroll certain amounts from current position
+  window.scrollBy({
+    top: 0, // could be negative value
+    left: 0,
+    behavior: "smooth"
+  });
+  // Scroll to a certain element
+  document.querySelector("#smoothScrolled").scrollIntoView({
+    behavior: "smooth"
+  });
+
+  console.log("Clicked");
 };
