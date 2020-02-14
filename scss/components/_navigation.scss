@@ -1,4 +1,4 @@
-$nav-height: 9rem;
+$nav-height: 4vw;
 $nav-paddings: 0 2.3vw;
 
 .navigation {
@@ -63,7 +63,8 @@ $nav-paddings: 0 2.3vw;
 
           &:hover {
             color: $hover-on-nav;
-            transform: translateY(-5px);
+            // transform: translateY(-5px);
+            padding-bottom: 2rem;
           }
         }
       }
@@ -91,9 +92,9 @@ $nav-paddings: 0 2.3vw;
 }
 
 @media only screen and (max-width: 750px) {
-  // .navigation {
-  //   background-color: white;
-  // }
+  .navigation {
+    height: 6rem;
+  }
   .navigation__menu {
     display: none;
   }
@@ -140,7 +141,7 @@ $nav-paddings: 0 2.3vw;
     position: absolute;
     top: 100%;
     right: 0%;
-
+    // height: 6rem !important;
     z-index: 99;
     background-color: white;
 

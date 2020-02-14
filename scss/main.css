@@ -10,7 +10,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2vw;
+  margin-bottom: 2vw;
+  margin-left: 8%;
 }
 
 .after-clicked {
@@ -53,6 +54,14 @@
   opacity: 0.5;
   opacity: 0.3;
   z-index: -1;
+}
+
+.focuse_image {
+  border: 2px solid white;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.1);
 }
 
 *,
@@ -122,7 +131,7 @@ html {
 }
 
 .medium {
-  font-size: calc( 14px + (20 - 14) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 15px + (17 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .small {
@@ -170,8 +179,6 @@ html {
   background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: 0.8s all ease;
-  transition: 0.8s all ease;
 }
 
 .hero .hero_about {
@@ -317,8 +324,8 @@ html {
       -ms-flex-pack: start;
           justify-content: start;
   width: 100%;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 
 .hero .home_carusel__container .carusel .carusel_div {
@@ -354,7 +361,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
   z-index: -1;
-  height: 100%;
   position: relative;
 }
 
@@ -368,16 +374,19 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
-  width: 45%;
+  width: 50%;
   border-radius: 14px;
   height: 7.4vw;
   position: absolute;
-  left: 13.5vw;
-  top: -4vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  top: -3vw;
 }
 
 .hero .home_carusel .about_room .container .paragraph .display_none {
@@ -411,6 +420,8 @@ html {
 }
 
 .hero .home_carusel .about_room .container .btn {
+  margin-bottom: -0.5vw;
+  margin-right: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,8 +472,8 @@ main .building_section__btn {
           transform: translate(-50%, -50%);
   top: 18%;
   left: 9%;
-  width: 7rem;
-  height: 7rem;
+  width: 4vw;
+  height: 4vw;
   background-color: white;
   border-radius: 14px;
   display: -webkit-box;
@@ -603,6 +614,7 @@ main .work_section__gif .video {
   .hero .about_room .container {
     width: 100% !important;
     left: initial !important;
+    top: 0vw !important;
   }
   .hero__container {
     height: initial;
@@ -697,7 +709,7 @@ main .work_section__gif .video {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 9rem;
+  height: 4vw;
   padding: 0 2.3vw;
   z-index: 99;
   position: fixed;
@@ -777,8 +789,7 @@ main .work_section__gif .video {
 
 .navigation__menu__list__items a:hover {
   color: #151f28bd;
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  padding-bottom: 2rem;
 }
 
 .navigation .mobile_nav {
@@ -806,6 +817,9 @@ main .work_section__gif .video {
 }
 
 @media only screen and (max-width: 750px) {
+  .navigation {
+    height: 6rem;
+  }
   .navigation__menu {
     display: none;
   }

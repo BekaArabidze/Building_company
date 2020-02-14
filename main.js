@@ -10,11 +10,49 @@ function scaleOnPicture() {
   }
 }
 
+
+
+
+
+const updateDescription = (amountOfClicks, start) => {
+  let index;
+
+  let prevElement;
+  let nextElement;
+  if (start) {
+    index = caruselImageElements.length - 1;
+  } else {
+    index = caruselImageElements.length - amountOfClicks - 1;
+  }
+
+
+
+
+  let focusElement = caruselImageElements[index]
+  focusElement.classList.add('focuse_image')
+
+  let otherImages = [...caruselImageElements].filter(element => element != focusElement)
+  otherImages.forEach(elem => elem.classList.remove('focuse_image'))
+
+
+  let backgroundImagePath = focusElement.attributes["src"].nodeValue;
+  backImage.style.backgroundImage = `url("${backgroundImagePath}")`;
+
+  let currentImgAtribute = focusElement.dataset;
+  description.innerHTML = ` ${currentImgAtribute.description}<span class="futura-condensed-font">  (${currentImgAtribute.metres}m) </span> `;
+}
+
+
+
+
+
+
 ////  ====================================v
 ///================== CARUSEL
 
 const carusel = document.querySelector(".carusel");
 const caruselImages = document.querySelectorAll(".carusel_div");
+const caruselImageElements = document.querySelectorAll(".carusel_image");
 
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
@@ -26,124 +64,66 @@ let amountOfClicks = 0;
 const size = caruselImages[0].clientWidth;
 
 let total = 0;
-let caruselImageWidth = Math.floor(
-  getComputedStyle(document.querySelectorAll(".carusel_div")[0]).width.split(
-    "px"
-  )[0]
-);
-let caruselImageRightMargin = parseInt(
-  getComputedStyle(
-    document.querySelectorAll(".carusel_div")[0]
-  ).marginRight.split("px")[0]
-);
+let caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
+let caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
 
 let amount = caruselImageWidth + caruselImageRightMargin;
 
 document.addEventListener("resize", () => {
   amountOfClicks = 0;
   size = caruselImages[0].clientWidth;
-
   total = 0;
-  caruselImageWidth = Math.floor(
-    getComputedStyle(document.querySelectorAll(".carusel_div")[0]).width.split(
-      "px"
-    )[0]
-  );
-  caruselImageRightMargin = parseInt(
-    getComputedStyle(
-      document.querySelectorAll(".carusel_div")[0]
-    ).marginRight.split("px")[0]
-  );
+  caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
+  caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
   amount = caruselImageWidth + caruselImageRightMargin;
 });
+
+updateDescription(caruselImageElements.length, true)
 
 //// NEXT-BTN
 nextBtn.addEventListener("click", () => {
   amountOfClicks++;
-  console.log(amountOfClicks);
-  // console.log(total);
   if (amountOfClicks == caruselImages.length) {
     total = 0;
     amountOfClicks = 0;
-    if (amountOfClicks == 0) {
-      backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
-      description.innerHTML = "abara room area ";
-    }
-    // prevBtn.classList.remove("btn_opacity");
-
-    console.log("reverse");
   } else {
     if (amountOfClicks <= 0) {
       prevBtn.classList.add("btn_opacity");
     } else {
       prevBtn.classList.remove("btn_opacity");
     }
-    if (amountOfClicks == 1) {
-      backImage.style.backgroundImage = 'url("/../../pictures/five.png")';
-      // color_radius.classList.toggle("color_radius");
-      // color_radius.classList.remove("color_radius");
-      description.innerHTML = "new room-asdf";
-    } else if (amountOfClicks == 2) {
-      backImage.style.backgroundImage = 'url("/../../pictures/four.png")';
-      // color_radius.classList.add("color_radius");
-      description.innerHTML = "new room-2";
-    } else if (amountOfClicks == 3) {
-      backImage.style.backgroundImage = 'url("/../../pictures/three.png")';
-      description.innerHTML = "new room-3";
-    } else if (amountOfClicks == 4) {
-      backImage.style.backgroundImage = 'url("/../../pictures/two.png")';
-      description.innerHTML = "new room-4";
-    } else if (amountOfClicks == 5) {
-      backImage.style.backgroundImage = 'url("/../../pictures/one.png")';
-      description.innerHTML = "new room-5";
-    } else {
-      console.log("error");
-    }
-
     total = total + amount;
   }
+  updateDescription(amountOfClicks, false)
   carusel.style.transform = `translateX(${total}px)`;
 });
 
 //// PREV-BTN
 prevBtn.addEventListener("click", () => {
   amountOfClicks--;
-  console.log(amountOfClicks);
 
   if (amountOfClicks <= 0) {
     total = 0;
     amountOfClicks = 0;
     carusel.style.transform = `translateX(${total}px)`;
-    if (amountOfClicks == 0) {
-      backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
-      description.innerHTML = "abara room area ";
-    }
     prevBtn.classList.add("btn_opacity");
-    // prevBtn.removeEventListener("click", this);
   } else {
-    if (amountOfClicks == 1) {
-      backImage.style.backgroundImage = 'url("/../../pictures/five.png")';
-      description.innerHTML = "my room-a";
-    } else if (amountOfClicks == 2) {
-      backImage.style.backgroundImage = 'url("/../../pictures/four.png")';
-      description.innerHTML = "my room-2";
-    } else if (amountOfClicks == 3) {
-      backImage.style.backgroundImage = 'url("/../../pictures/three.png")';
-      description.innerHTML = "my room-3";
-    } else if (amountOfClicks == 4) {
-      backImage.style.backgroundImage = 'url("/../../pictures/two.png")';
-      description.innerHTML = "my room-4";
-    } else if (amountOfClicks == 5) {
-      backImage.style.backgroundImage = 'url("/../../pictures/one.png")';
-      description.innerHTML = "my room-5";
-    } else {
-      console.log("error");
-    }
     prevBtn.classList.remove("btn_opacity");
     total = total - amount;
   }
+  updateDescription(amountOfClicks, false)
   carusel.style.transform = `translateX(${total}px)`;
 });
+
+
+
+
+
+
+
+
+
+
 
 ////  ====================================v
 ///==================
@@ -155,7 +135,7 @@ const sectionOptions = {
   rootMargin: "-600px 0px 0px 0px"
 };
 
-const sectionOneObserver = new IntersectionObserver(function(
+const sectionOneObserver = new IntersectionObserver(function (
   entries,
   sectionOneObserver
 ) {
@@ -165,10 +145,9 @@ const sectionOneObserver = new IntersectionObserver(function(
     } else {
       navigation.classList.remove("nav-scrolled");
     }
-    console.log(entry.target);
   });
 },
-sectionOptions);
+  sectionOptions);
 
 sectionOneObserver.observe(sectionHero);
 
@@ -186,6 +165,7 @@ const toggleOnNav = () => {
   new_nav.classList.toggle("new-nav");
   console.log("clicked");
 };
+
 // Scroll to specific values
 // scrollTo is the same
 
@@ -209,3 +189,31 @@ const buttonScrolled = () => {
 
   console.log("Clicked");
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
