@@ -32,6 +32,7 @@
   background-color: red;
   border-radius: 15px !important;
 }
+
 .blur {
   position: absolute;
   top: 0;
@@ -41,4 +42,16 @@
   opacity: 0.5;
   opacity: 0.3;
   z-index: -1;
+}
+
+.margin_bottom {
+  margin-bottom: 1.5vw;
+}
+
+.letter-spacing {
+  letter-spacing: 5px;
+}
+
+.margin-left {
+  margin-left: 1vw;
 }

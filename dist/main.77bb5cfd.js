@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\fonts\\Futura-Bold.otf":[["Futura-Bold.fd42330f.otf","fonts/Futura-Bold.otf"],"fonts/Futura-Bold.otf"],"./..\\fonts\\FuturaBT-Book.otf":[["FuturaBT-Book.61062583.otf","fonts/FuturaBT-Book.otf"],"fonts/FuturaBT-Book.otf"],"./..\\fonts\\Futura-CondensedLight.otf":[["Futura-CondensedLight.b52ce36b.otf","fonts/Futura-CondensedLight.otf"],"fonts/Futura-CondensedLight.otf"],"./..\\pictures\\main-pic.png":[["main-pic.73c01d65.png","pictures/main-pic.png"],"pictures/main-pic.png"],"./..\\pictures\\background.png":[["background.5e5c364d.png","pictures/background.png"],"pictures/background.png"],"./..\\pictures\\building.png":[["building.b0f941db.png","pictures/building.png"],"pictures/building.png"],"./..\\pictures\\circle.png":[["circle.d68f4906.png","pictures/circle.png"],"pictures/circle.png"],"./..\\pictures\\comp-1.gif":[["comp-1.934e51b8.gif","pictures/comp-1.gif"],"pictures/comp-1.gif"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\fonts\\Futura-Bold.otf":[["Futura-Bold.fd42330f.otf","fonts/Futura-Bold.otf"],"fonts/Futura-Bold.otf"],"./..\\fonts\\FuturaBT-Book.otf":[["FuturaBT-Book.61062583.otf","fonts/FuturaBT-Book.otf"],"fonts/FuturaBT-Book.otf"],"./..\\fonts\\Futura-CondensedLight.otf":[["Futura-CondensedLight.b52ce36b.otf","fonts/Futura-CondensedLight.otf"],"fonts/Futura-CondensedLight.otf"],"./..\\pictures\\main-pic.png":[["main-pic.73c01d65.png","pictures/main-pic.png"],"pictures/main-pic.png"],"./..\\pictures\\background.png":[["background.5e5c364d.png","pictures/background.png"],"pictures/background.png"],"./..\\pictures\\building.png":[["building.b0f941db.png","pictures/building.png"],"pictures/building.png"],"./..\\pictures\\circle.png":[["circle.d68f4906.png","pictures/circle.png"],"pictures/circle.png"],"./..\\pictures\\comp-1.gif":[["comp-1.934e51b8.gif","pictures/comp-1.gif"],"pictures/comp-1.gif"],"./..\\pictures\\number_one.png":[["number_one.869fb53e.png","pictures/number_one.png"],"pictures/number_one.png"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,11 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58824" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53472" + '/');
->>>>>>> 1bb86ba75a1cc43a8735b187614318953eb650b7
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50677" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,4 +1,4 @@
-$nav-height: 4vw;
+$nav-height: 8rem;
 $nav-paddings: 0 2.3vw;
 
 .navigation {
@@ -90,6 +90,7 @@ $nav-paddings: 0 2.3vw;
   a {
     color: black;
   }
+  height: 6.5rem;
 }
 
 @media only screen and (max-width: 750px) {
@@ -180,7 +181,7 @@ $nav-paddings: 0 2.3vw;
               // font-family: "paragraph-regular";
               // font-size: 1.6rem;
               color: black;
-              font-weight: 600;
+              // font-weight: 600;
               font-size: 1.8rem;
 
               &:hover {
