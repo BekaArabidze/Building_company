@@ -117,25 +117,30 @@ html {
 }
 
 .biggest {
-  font-size: calc( 20px + (49 - 20) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc(
+ 20px + (49 - 20) * ((100vw - 300px) / (1900 - 700))) !important;
   letter-spacing: 1.1px;
   line-height: 135%;
 }
 
 .big {
-  font-size: calc( 17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc(
+ 17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .regular {
-  font-size: calc( 15px + (21 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc(
+ 15px + (21 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .medium {
-  font-size: calc( 15px + (17 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc(
+ 15px + (17 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .small {
-  font-size: calc( 12px + (18 - 12) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc(
+ 12px + (18 - 12) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .futura-bold-font {
@@ -174,7 +179,7 @@ html {
 .hero .hero_picture .carousel_slide {
   width: 100%;
   height: 100%;
-  background: no-repeat url("/../../pictures/main-pic.png");
+  background: no-repeat url("../../pictures/main-pic.png");
   background-size: cover;
   background-position: center;
   -o-object-fit: cover;
@@ -182,7 +187,7 @@ html {
 }
 
 .hero .hero_about {
-  background: no-repeat url("/../../pictures/background.png");
+  background: no-repeat url("../../pictures/background.png");
   background-size: cover;
   background-position: center;
   -o-object-fit: cover;
@@ -459,7 +464,7 @@ main .building_section {
 main .building_section__model {
   width: 100%;
   height: 100%;
-  background: no-repeat url("/../../pictures/building.png");
+  background: no-repeat url("../../pictures/building.png");
   background-size: cover;
   background-position: center;
   -o-object-fit: cover;
@@ -517,7 +522,7 @@ main .work_section .introduction:after {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: no-repeat url("/../../pictures/circle.png");
+  background: no-repeat url("../../pictures/circle.png");
   background-size: cover;
   background-position: center;
   -o-object-fit: cover;
@@ -572,7 +577,7 @@ main .work_section__gif .yellow {
 }
 
 main .work_section__gif .video {
-  background: url("/../../pictures/comp-1.gif");
+  background: url("../../pictures/comp-1.gif");
   background-size: cover;
   background-position: center;
   -o-object-fit: cover;

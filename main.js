@@ -97,7 +97,7 @@ nextBtn.addEventListener("click", () => {
   updateDescription(amountOfClicks, false)
   carusel.style.transform = `translateX(${total}px)`;
 });
-
+ 
 //// PREV-BTN
 prevBtn.addEventListener("click", () => {
   amountOfClicks--;

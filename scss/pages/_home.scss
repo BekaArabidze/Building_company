@@ -16,14 +16,14 @@
     .carousel_slide {
       width: 100%;
       height: 100%;
-      background: no-repeat url("/../../pictures/main-pic.png");
+      background: no-repeat url("../pictures/main-pic.png");
       @include backgroundProperty;
       // transition: 0.8s all ease;
     }
   }
-
+  
   .hero_about {
-    background: no-repeat url("/../../pictures/background.png");
+    background: no-repeat url("../pictures/background.png");
     @include backgroundProperty;
 
     &__container {
@@ -240,8 +240,8 @@ main {
     &__model {
       width: 100%;
       height: 100%;
-      background: no-repeat url("/../../pictures/building.png");
-      @include backgroundProperty;
+      background: no-repeat url("../pictures/building.png");
+      @include backgroundProperty; 
     }
 
     &__btn {
@@ -277,7 +277,7 @@ main {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: no-repeat url("/../../pictures/circle.png");
+        background: no-repeat url("../pictures/circle.png");
         @include backgroundProperty;
         top: 39%;
         left: 50%;
@@ -318,7 +318,7 @@ main {
       }
 
       .video {
-        background: url("/../../pictures/comp-1.gif");
+        background: url("../pictures/comp-1.gif");
         @include backgroundProperty;
         width: 50%;
         height: 80%;
