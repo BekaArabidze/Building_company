@@ -245,6 +245,7 @@ var sectionOneObserver = new IntersectionObserver(function (entries, sectionOneO
     } else {
       navigation.classList.remove("nav-scrolled");
     }
+<<<<<<< HEAD
   });
 }, sectionOptions);
 sectionOneObserver.observe(sectionHero); ///// =============NAV-BAR ANIMATIONS
@@ -299,6 +300,9 @@ function Module(moduleName) {
     dispose: function (fn) {
       this._disposeCallbacks.push(fn);
     }
+=======
+<<<<<<< HEAD
+>>>>>>> c8a172a0bee946ec2840a9e192b92d67af38d53e
   };
   module.bundle.hotData = null;
 }
@@ -310,7 +314,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "54263" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58908" + '/');
+>>>>>>> c8a172a0bee946ec2840a9e192b92d67af38d53e
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -325,6 +333,53 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
 
           if (didAccept) {
             handled = true;
+<<<<<<< HEAD
+=======
+=======
+
+    module.bundle.Module = Module;
+    var checkedAssets, assetsToAccept;
+    var parent = module.bundle.parent;
+
+    if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+      var hostname = "" || location.hostname;
+      var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+      var ws = new WebSocket(protocol + '://' + hostname + ':' + "54137" + '/');
+
+      ws.onmessage = function (event) {
+        checkedAssets = {};
+        assetsToAccept = [];
+        var data = JSON.parse(event.data);
+
+        if (data.type === 'update') {
+          var handled = false;
+          data.assets.forEach(function (asset) {
+            if (!asset.isNew) {
+              var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+              if (didAccept) {
+                handled = true;
+              }
+            }
+          }); // Enable HMR for CSS by default.
+
+          handled = handled || data.assets.every(function (asset) {
+            return asset.type === 'css' && asset.generated.js;
+          });
+
+          if (handled) {
+            console.clear();
+            data.assets.forEach(function (asset) {
+              hmrApply(global.parcelRequire, asset);
+            });
+            assetsToAccept.forEach(function (v) {
+              hmrAcceptRun(v[0], v[1]);
+            });
+          } else if (location.reload) {
+            // `location` global exists in a web worker context but lacks `.reload()` function.
+            location.reload();
+>>>>>>> d0c4dc74200a8e8aab464629bdeee634a4139b51
+>>>>>>> c8a172a0bee946ec2840a9e192b92d67af38d53e
           }
         }
       }); // Enable HMR for CSS by default.
