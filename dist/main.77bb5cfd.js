@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -149,7 +149,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"scss/main.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/bundle-url.js"}],"scss/main.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\fonts\\Futura-Bold.otf":[["Futura-Bold.fd42330f.otf","fonts/Futura-Bold.otf"],"fonts/Futura-Bold.otf"],"./..\\fonts\\FuturaBT-Book.otf":[["FuturaBT-Book.61062583.otf","fonts/FuturaBT-Book.otf"],"fonts/FuturaBT-Book.otf"],"./..\\fonts\\Futura-CondensedLight.otf":[["Futura-CondensedLight.b52ce36b.otf","fonts/Futura-CondensedLight.otf"],"fonts/Futura-CondensedLight.otf"],"./..\\pictures\\main-pic.png":[["main-pic.73c01d65.png","pictures/main-pic.png"],"pictures/main-pic.png"],"./..\\pictures\\background.png":[["background.5e5c364d.png","pictures/background.png"],"pictures/background.png"],"./..\\pictures\\building.png":[["building.b0f941db.png","pictures/building.png"],"pictures/building.png"],"./..\\pictures\\circle.png":[["circle.d68f4906.png","pictures/circle.png"],"pictures/circle.png"],"./..\\pictures\\comp-1.gif":[["comp-1.934e51b8.gif","pictures/comp-1.gif"],"pictures/comp-1.gif"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\fonts\\Futura-Bold.otf":[["Futura-Bold.fd42330f.otf","fonts/Futura-Bold.otf"],"fonts/Futura-Bold.otf"],"./..\\fonts\\FuturaBT-Book.otf":[["FuturaBT-Book.61062583.otf","fonts/FuturaBT-Book.otf"],"fonts/FuturaBT-Book.otf"],"./..\\fonts\\Futura-CondensedLight.otf":[["Futura-CondensedLight.b52ce36b.otf","fonts/Futura-CondensedLight.otf"],"fonts/Futura-CondensedLight.otf"],"./..\\pictures\\main-pic.png":[["main-pic.73c01d65.png","pictures/main-pic.png"],"pictures/main-pic.png"],"./..\\pictures\\background.png":[["background.5e5c364d.png","pictures/background.png"],"pictures/background.png"],"./..\\pictures\\building.png":[["building.b0f941db.png","pictures/building.png"],"pictures/building.png"],"./..\\pictures\\circle.png":[["circle.d68f4906.png","pictures/circle.png"],"pictures/circle.png"],"./..\\pictures\\comp-1.gif":[["comp-1.934e51b8.gif","pictures/comp-1.gif"],"pictures/comp-1.gif"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58402" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53472" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -393,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js"], null)
 //# sourceMappingURL=/main.77bb5cfd.js.map
