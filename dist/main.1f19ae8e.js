@@ -118,6 +118,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
 function scaleOnPicture() {
@@ -131,12 +139,40 @@ function scaleOnPicture() {
   } else {
     carousel_slide.classList.remove("after-clicked");
   }
-} ////  ====================================v
+}
+
+var updateDescription = function updateDescription(amountOfClicks, start) {
+  var index;
+  var prevElement;
+  var nextElement;
+
+  if (start) {
+    index = caruselImageElements.length - 1;
+  } else {
+    index = caruselImageElements.length - amountOfClicks - 1;
+  }
+
+  var focusElement = caruselImageElements[index];
+  focusElement.classList.add('focuse_image');
+
+  var otherImages = _toConsumableArray(caruselImageElements).filter(function (element) {
+    return element != focusElement;
+  });
+
+  otherImages.forEach(function (elem) {
+    return elem.classList.remove('focuse_image');
+  });
+  var backgroundImagePath = focusElement.attributes["src"].nodeValue;
+  backImage.style.backgroundImage = "url(\"".concat(backgroundImagePath, "\")");
+  var currentImgAtribute = focusElement.dataset;
+  description.innerHTML = " ".concat(currentImgAtribute.description, "<span class=\"futura-condensed-font\">  (").concat(currentImgAtribute.metres, "m) </span> ");
+}; ////  ====================================v
 ///================== CARUSEL
 
 
 var carusel = document.querySelector(".carusel");
 var caruselImages = document.querySelectorAll(".carusel_div");
+var caruselImageElements = document.querySelectorAll(".carusel_image");
 var prevBtn = document.querySelector("#prevBtn");
 var nextBtn = document.querySelector("#nextBtn");
 var backImage = document.querySelector(".carousel_slide");
@@ -145,105 +181,53 @@ var color_radius = document.querySelector(".border");
 var amountOfClicks = 0;
 var size = caruselImages[0].clientWidth;
 var total = 0;
-var caruselImageWidth = Math.floor(getComputedStyle(document.querySelectorAll(".carusel_div")[0]).width.split("px")[0]);
-var caruselImageRightMargin = parseInt(getComputedStyle(document.querySelectorAll(".carusel_div")[0]).marginRight.split("px")[0]);
+var caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
+var caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
 var amount = caruselImageWidth + caruselImageRightMargin;
 document.addEventListener("resize", function () {
   amountOfClicks = 0;
   size = (_readOnlyError("size"), caruselImages[0].clientWidth);
   total = 0;
-  caruselImageWidth = Math.floor(getComputedStyle(document.querySelectorAll(".carusel_div")[0]).width.split("px")[0]);
-  caruselImageRightMargin = parseInt(getComputedStyle(document.querySelectorAll(".carusel_div")[0]).marginRight.split("px")[0]);
+  caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
+  caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
   amount = caruselImageWidth + caruselImageRightMargin;
-}); //// NEXT-BTN
+});
+updateDescription(caruselImageElements.length, true); //// NEXT-BTN
 
 nextBtn.addEventListener("click", function () {
   amountOfClicks++;
-  console.log(amountOfClicks); // console.log(total);
 
   if (amountOfClicks == caruselImages.length) {
     total = 0;
     amountOfClicks = 0;
-
-    if (amountOfClicks == 0) {
-      // backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
-      description.innerHTML = "abara room area ";
-    } // prevBtn.classList.remove("btn_opacity");
-
-
-    console.log("reverse");
   } else {
     if (amountOfClicks <= 0) {
       prevBtn.classList.add("btn_opacity");
     } else {
       prevBtn.classList.remove("btn_opacity");
-    } // if (amountOfClicks == 1) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/five.png")';
-    //   // color_radius.classList.toggle("color_radius");
-    //   // color_radius.classList.remove("color_radius");
-    //   description.innerHTML = "new room-asdf";
-    // } else if (amountOfClicks == 2) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/four.png")';
-    //   // color_radius.classList.add("color_radius");
-    //   description.innerHTML = "new room-2";
-    // } else if (amountOfClicks == 3) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/three.png")';
-    //   description.innerHTML = "new room-3";
-    // } else if (amountOfClicks == 4) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/two.png")';
-    //   description.innerHTML = "new room-4";
-    // } else if (amountOfClicks == 5) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/one.png")';
-    //   description.innerHTML = "new room-5";
-    // } else {
-    //   console.log("error");
-    // }
-
+    }
 
     total = total + amount;
   }
 
+  updateDescription(amountOfClicks, false);
   carusel.style.transform = "translateX(".concat(total, "px)");
 }); //// PREV-BTN
 
 prevBtn.addEventListener("click", function () {
   amountOfClicks--;
-  console.log(amountOfClicks);
 
   if (amountOfClicks <= 0) {
     total = 0;
     amountOfClicks = 0;
     carusel.style.transform = "translateX(".concat(total, "px)");
-
-    if (amountOfClicks == 0) {
-      // backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
-      description.innerHTML = "abara room area ";
-    }
-
-    prevBtn.classList.add("btn_opacity"); // prevBtn.removeEventListener("click", this);
+    prevBtn.classList.add("btn_opacity");
   } else {
-    // if (amountOfClicks == 1) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/five.png")';
-    //   description.innerHTML = "my room-a";
-    // } else if (amountOfClicks == 2) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/four.png")';
-    //   description.innerHTML = "my room-2";
-    // } else if (amountOfClicks == 3) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/three.png")';
-    //   description.innerHTML = "my room-3";
-    // } else if (amountOfClicks == 4) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/two.png")';
-    //   description.innerHTML = "my room-4";
-    // } else if (amountOfClicks == 5) {
-    //   backImage.style.backgroundImage = 'url("../../pictures/one.png")';
-    //   description.innerHTML = "my room-5";
-    // } else {
-    //   console.log("error");
-    // }
     prevBtn.classList.remove("btn_opacity");
     total = total - amount;
   }
 
+  updateDescription(amountOfClicks, false);
   carusel.style.transform = "translateX(".concat(total, "px)");
 }); ////  ====================================v
 ///==================
@@ -261,8 +245,6 @@ var sectionOneObserver = new IntersectionObserver(function (entries, sectionOneO
     } else {
       navigation.classList.remove("nav-scrolled");
     }
-
-    console.log(entry.target);
   });
 }, sectionOptions);
 sectionOneObserver.observe(sectionHero); ///// =============NAV-BAR ANIMATIONS
@@ -328,7 +310,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58402" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58824" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

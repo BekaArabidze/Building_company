@@ -3,7 +3,8 @@
   align-content: center;
   align-items: center;
   justify-content: center;
-  margin-top: 2vw;
+  margin-bottom: 2vw;
+  margin-left: 8%;
 }
 
 .after-clicked {
@@ -40,6 +41,12 @@
   opacity: 0.5;
   opacity: 0.3;
   z-index: -1;
+}
+
+.focuse_image {
+  border: 2px solid white;
+  transform: scale(1.02);
+  box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.1);
 }
 
 *,
@@ -103,7 +110,7 @@ html {
 }
 
 .medium {
-  font-size: calc( 14px + (20 - 14) * ((100vw - 300px) / (1900 - 700)) ) !important;
+  font-size: calc( 15px + (17 - 15) * ((100vw - 300px) / (1900 - 700)) ) !important;
 }
 
 .small {
@@ -145,7 +152,6 @@ html {
   background-size: cover;
   background-position: center;
   object-fit: cover;
-  transition: 0.8s all ease;
 }
 .hero .hero_about {
   background: no-repeat url("/background.5e5c364d.png");
@@ -237,7 +243,7 @@ html {
   align-items: center;
   justify-content: start;
   width: 100%;
-  transition: 0.5s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 .hero .home_carusel__container .carusel .carusel_div {
   position: relative;
@@ -262,7 +268,6 @@ html {
   justify-content: center;
   align-items: center;
   z-index: -1;
-  height: 100%;
   position: relative;
 }
 .hero .home_carusel .about_room .container {
@@ -270,14 +275,14 @@ html {
   display: flex;
   height: 100%;
   flex-direction: row;
-  justify-content: space-around;
   box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
-  width: 45%;
+  width: 50%;
   border-radius: 14px;
   height: 7.4vw;
   position: absolute;
-  left: 13.5vw;
-  top: -4vw;
+  justify-content: space-between;
+  align-items: end;
+  top: -3vw;
 }
 .hero .home_carusel .about_room .container .paragraph .display_none {
   display: none;
@@ -299,6 +304,8 @@ html {
   margin-right: 1vw;
 }
 .hero .home_carusel .about_room .container .btn {
+  margin-bottom: -0.5vw;
+  margin-right: 10%;
   display: flex;
   align-items: center;
 }
@@ -336,8 +343,8 @@ main .building_section__btn {
   transform: translate(-50%, -50%);
   top: 18%;
   left: 9%;
-  width: 7rem;
-  height: 7rem;
+  width: 4vw;
+  height: 4vw;
   background-color: white;
   border-radius: 14px;
   display: flex;
@@ -442,6 +449,7 @@ main .work_section__gif .video {
   .hero .about_room .container {
     width: 100% !important;
     left: initial !important;
+    top: 0vw !important;
   }
   .hero__container {
     height: initial;
@@ -519,7 +527,7 @@ main .work_section__gif .video {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 9rem;
+  height: 4vw;
   padding: 0 2.3vw;
   z-index: 99;
   position: fixed;
@@ -570,7 +578,7 @@ main .work_section__gif .video {
 }
 .navigation__menu__list__items a:hover {
   color: #151f28bd;
-  transform: translateY(-5px);
+  padding-bottom: 2rem;
 }
 .navigation .mobile_nav {
   display: none;
@@ -592,6 +600,10 @@ main .work_section__gif .video {
 }
 
 @media only screen and (max-width: 750px) {
+  .navigation {
+    height: 6rem;
+  }
+
   .navigation__menu {
     display: none;
   }
