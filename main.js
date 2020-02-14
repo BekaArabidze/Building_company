@@ -66,7 +66,7 @@ nextBtn.addEventListener("click", () => {
     total = 0;
     amountOfClicks = 0;
     if (amountOfClicks == 0) {
-      backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
+      // backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
       description.innerHTML = "abara room area ";
     }
     // prevBtn.classList.remove("btn_opacity");
@@ -78,33 +78,33 @@ nextBtn.addEventListener("click", () => {
     } else {
       prevBtn.classList.remove("btn_opacity");
     }
-    if (amountOfClicks == 1) {
-      backImage.style.backgroundImage = 'url("/../../pictures/five.png")';
-      // color_radius.classList.toggle("color_radius");
-      // color_radius.classList.remove("color_radius");
-      description.innerHTML = "new room-asdf";
-    } else if (amountOfClicks == 2) {
-      backImage.style.backgroundImage = 'url("/../../pictures/four.png")';
-      // color_radius.classList.add("color_radius");
-      description.innerHTML = "new room-2";
-    } else if (amountOfClicks == 3) {
-      backImage.style.backgroundImage = 'url("/../../pictures/three.png")';
-      description.innerHTML = "new room-3";
-    } else if (amountOfClicks == 4) {
-      backImage.style.backgroundImage = 'url("/../../pictures/two.png")';
-      description.innerHTML = "new room-4";
-    } else if (amountOfClicks == 5) {
-      backImage.style.backgroundImage = 'url("/../../pictures/one.png")';
-      description.innerHTML = "new room-5";
-    } else {
-      console.log("error");
-    }
+    // if (amountOfClicks == 1) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/five.png")';
+    //   // color_radius.classList.toggle("color_radius");
+    //   // color_radius.classList.remove("color_radius");
+    //   description.innerHTML = "new room-asdf";
+    // } else if (amountOfClicks == 2) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/four.png")';
+    //   // color_radius.classList.add("color_radius");
+    //   description.innerHTML = "new room-2";
+    // } else if (amountOfClicks == 3) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/three.png")';
+    //   description.innerHTML = "new room-3";
+    // } else if (amountOfClicks == 4) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/two.png")';
+    //   description.innerHTML = "new room-4";
+    // } else if (amountOfClicks == 5) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/one.png")';
+    //   description.innerHTML = "new room-5";
+    // } else {
+    //   console.log("error");
+    // }
 
     total = total + amount;
   }
   carusel.style.transform = `translateX(${total}px)`;
 });
-
+ 
 //// PREV-BTN
 prevBtn.addEventListener("click", () => {
   amountOfClicks--;
@@ -115,30 +115,30 @@ prevBtn.addEventListener("click", () => {
     amountOfClicks = 0;
     carusel.style.transform = `translateX(${total}px)`;
     if (amountOfClicks == 0) {
-      backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
+      // backImage.style.backgroundImage = 'url("../../pictures/main-pic.png")';
       description.innerHTML = "abara room area ";
     }
     prevBtn.classList.add("btn_opacity");
     // prevBtn.removeEventListener("click", this);
   } else {
-    if (amountOfClicks == 1) {
-      backImage.style.backgroundImage = 'url("/../../pictures/five.png")';
-      description.innerHTML = "my room-a";
-    } else if (amountOfClicks == 2) {
-      backImage.style.backgroundImage = 'url("/../../pictures/four.png")';
-      description.innerHTML = "my room-2";
-    } else if (amountOfClicks == 3) {
-      backImage.style.backgroundImage = 'url("/../../pictures/three.png")';
-      description.innerHTML = "my room-3";
-    } else if (amountOfClicks == 4) {
-      backImage.style.backgroundImage = 'url("/../../pictures/two.png")';
-      description.innerHTML = "my room-4";
-    } else if (amountOfClicks == 5) {
-      backImage.style.backgroundImage = 'url("/../../pictures/one.png")';
-      description.innerHTML = "my room-5";
-    } else {
-      console.log("error");
-    }
+    // if (amountOfClicks == 1) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/five.png")';
+    //   description.innerHTML = "my room-a";
+    // } else if (amountOfClicks == 2) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/four.png")';
+    //   description.innerHTML = "my room-2";
+    // } else if (amountOfClicks == 3) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/three.png")';
+    //   description.innerHTML = "my room-3";
+    // } else if (amountOfClicks == 4) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/two.png")';
+    //   description.innerHTML = "my room-4";
+    // } else if (amountOfClicks == 5) {
+    //   backImage.style.backgroundImage = 'url("../../pictures/one.png")';
+    //   description.innerHTML = "my room-5";
+    // } else {
+    //   console.log("error");
+    // }
     prevBtn.classList.remove("btn_opacity");
     total = total - amount;
   }

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "parcel bundle index.html"
+  },
+  "devDependencies": {
+    "sass": "^1.25.0"
+  }
+}

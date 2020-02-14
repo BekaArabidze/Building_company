@@ -1,231 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-   
-    <link rel="stylesheet" href="./scss/main.css" />
-    <link rel="stylesheet" href="./glider/glider.min.css">
-    <title>Building Company</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="./scss/main.scss" />
+  <!-- <link rel="stylesheet" href="glider/glider.min.css"> -->
+  <title>Building Company</title>
+</head>
+
+<body>
 
 
-    <header class="navigation">
-      <div class="navigation__wrapper" >
-        <div class="navigation__logo">
-          <img
-            src="./pictures/logo.svg"
-            alt="Logo"
-            class="navigation__logo__property"
-          ></img>
-          
-        </div>
+  <header class="navigation">
+    <div class="navigation__wrapper">
+      <div class="navigation__logo">
+        <img src="./pictures/logo.svg" alt="Logo" class="navigation__logo__property"></img>
 
-        <div class="navigation__menu" id="removedNav">
-          <ul class="navigation__menu__list">
-            <li class="navigation__menu__list__items">
-              <a href="#" class="futura-medium-font regular"> our projects </a>
-            </li>
-            
-            <li class="navigation__menu__list__items">
-              <a href="#" class="futura-medium-font regular"> about </a>
-            </li>
-            <li class="navigation__menu__list__items">
-              <a href="#" class="futura-medium-font regular"> contact </a>
-            </li>
-          </ul>
-        </div>
+      </div>
 
-         <!---   MOBILE NAV -->
-         <div class="new-opacity ">
-          <div class="mobile_nav__container">
-            <div class="mobile__menu">
-              <ul class="mobile__menu__list">
+      <div class="navigation__menu" id="removedNav">
+        <ul class="navigation__menu__list">
+          <li class="navigation__menu__list__items">
+            <a href="#" class="futura-medium-font regular"> our projects </a>
+          </li>
+
+          <li class="navigation__menu__list__items">
+            <a href="#" class="futura-medium-font regular"> about </a>
+          </li>
+          <li class="navigation__menu__list__items">
+            <a href="#" class="futura-medium-font regular"> contact </a>
+          </li>
+        </ul>
+      </div>
+
+      <!---   MOBILE NAV -->
+      <div class="new-opacity ">
+        <div class="mobile_nav__container">
+          <div class="mobile__menu">
+            <ul class="mobile__menu__list">
               <li class="mobile__menu__list__items">
                 <a href="#" class="futura-medium-font regular"> our projects </a>
               </li>
-              
+
               <li class="mobile__menu__list__items">
                 <a href="#" class="futura-medium-font regular"> about </a>
               </li>
               <li class="mobile__menu__list__items">
                 <a href="#" class="futura-medium-font regular"> contact </a>
               </li>
-                
-              </ul>
-            </div>
-            
+
+            </ul>
           </div>
+
         </div>
+      </div>
 
-        <div onClick="toggleOnNav()" class="hamburger">
-           <svg
-                width="41"
-                height="41"
-                viewBox="0 0 41 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.999453 12.4625L28.3227 39.7857M11.7772 12.0826L29.418 29.7234M22.8404 11.0836L30.161 18.4041"
-                  stroke="#151F28"
-                  strokeWidth="1.5"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-        </div>
+      <div onClick="toggleOnNav()" class="hamburger">
+        <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.999453 12.4625L28.3227 39.7857M11.7772 12.0826L29.418 29.7234M22.8404 11.0836L30.161 18.4041"
+            stroke="#151F28" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+    </div>
 
 
-       
-        </header>
 
-        <section class="hero">
-            <div class="hero__container">
-              <div class="hero_about">
-                <div class="hero_about__container">
-                  <div class="home_address">
-                   <div class="home_address__container">
-                      <div class="heading">
-                        <p class=" futura-bold-font big">livins finished project on
-                          cotne dadiani #265</p></div>
-                      <div class="paragraph  ">
-                        <p class="futura-medium-font regular">ut most proud projects that took our tema months to perfect and give it the face it deserved</p></div>
-                    </div>
-                  </div>
-                  <div class="home_carusel">
-                    <div class="home_carusel__container ">
-                      <div class="carusel">
-                      <div class="carusel_div " id="lastClone">
-                        <img src="./pictures/one.png" alt="">
-                        <img class="blur" src="./pictures/one.png" alt="">
-                      </div>
-                      <div class="carusel_div ">
-                        <img  src="./pictures/two.png" alt="">
-                        <img class="blur" src="./pictures/two.png" alt="">
-                      </div>
-                      <div class="carusel_div ">
-                        <img  src="./pictures/three.png" alt="">
-                        <img class="blur" src="./pictures/three.png" alt="">
-                      </div>
-                      <div class="carusel_div ">
-                        <img  src="./pictures/four.png" alt="">
-                        <img class="blur" src="./pictures/four.png" alt="">
-                      </div>
-                      <div class="carusel_div border">
-                        <img src="./pictures/five.png" alt="">
-                        <img class="blur"src="./pictures/five.png" alt="">
-                      </div>
-                      <div class="carusel_div border" id="firstClone">
-                        <img src="./pictures/main-pic.png" alt="">
-                        <img class="blur" src="./pictures/main-pic.png" alt="">
-                      </div>
-                    </div>
+  </header>
 
-                    
-                    </div>
-                    <div class="about_room">
-                      <div class="container" >
-                        <div class="paragraph flex">
-                          <p class="futura-bold-font medium description">abara room area <span class="futura-condensed-font" > (28m) </span>
-                          </p>
-                       
-                        </div>
-
-                        <div class="btn">
-                          <div class="prev flex " id="nextBtn" >
-                            <img src="./pictures/prev arrow.svg" alt="">
-                          </div>
-                          <div class="next flex btn_opacity"  id="prevBtn"> 
-                            <img src="./pictures/next arrow.svg" alt="">
-                          </div>
-                        </div>
-                      
-                      
-                      </div>
-                      
-                    </div>
-                  </div>
-                  <div class="home_button">
-                    <div class="home_button__container">
-                     
-                      
-                      <div class="select_floor">
-                        <img src="./pictures/floor.png" alt="#">
-                        <a  class="futura-medium-font medium btn" onclick="buttonScrolled()" >
-                          <p class="paragraph">Select a floor</p>
-                        </a>
-                      </div>
-                      
-                    </div>
-                   
-                  </div>
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero_about">
+        <div class="hero_about__container">
+          <div class="home_address">
+            <div class="home_address__container">
+              <div class="heading">
+                <p class=" futura-bold-font big">livins finished project on
+                  cotne dadiani #265</p>
+              </div>
+              <div class="paragraph  ">
+                <p class="futura-medium-font regular">ut most proud projects that took our tema months to perfect and
+                  give it the face it deserved</p>
+              </div>   
+            </div>   
+          </div> 
+          <div class="home_carusel">
+            <div class="home_carusel__container ">
+              <div class="carusel">
+                <div class="carusel_div " id="lastClone">
+                  <img src="./pictures/one.png" alt="">
+                  <img class="blur" src="./pictures/one.png" alt="">
+                </div>
+                <div class="carusel_div ">
+                  <img src="./pictures/two.png" alt="">
+                  <img class="blur" src="./pictures/two.png" alt="">
+                </div>
+                <div class="carusel_div ">
+                  <img src="./pictures/three.png" alt="">
+                  <img class="blur" src="./pictures/three.png" alt="">
+                </div>
+                <div class="carusel_div ">
+                  <img src="./pictures/four.png" alt="">
+                  <img class="blur" src="./pictures/four.png" alt="">
+                </div>
+                <div class="carusel_div border">
+                  <img src="./pictures/five.png" alt="">
+                  <img class="blur" src="./pictures/five.png" alt="">
+                </div>
+                <div class="carusel_div border" id="firstClone">
+                  <img src="./pictures/main-pic.png" alt="">
+                  <img class="blur" src="./pictures/main-pic.png" alt="">
                 </div>
               </div>
-              <div class="hero_picture " id="main-picture" onClick="scaleOnPicture()">
-                
-                  <div class="carousel_slide">
-                   
-                  </div>
-                  
-                </div>
-               
-              </div>
-            </div>
-        </section>
 
-        <main>
-          <div class="container" id="smoothScrolled">
-            <div class="building_section">
-              <div class="building_section__model"></div>
-              <div class="building_section__btn">
-                <a href="#">
-                  <img src="./pictures/next_page.png" alt="next">
+
+            </div>
+            <div class="about_room">
+              <div class="container">
+                <div class="paragraph flex">
+                  <p class="futura-bold-font medium description">abara room area <span class="futura-condensed-font">
+                      (28m) </span>
+                  </p>
+
+                </div>
+
+                <div class="btn">
+                  <div class="prev flex " id="nextBtn">
+                    <img src="./pictures/prev arrow.svg" alt="">
+                  </div>
+                  <div class="next flex btn_opacity" id="prevBtn">
+                    <img src="./pictures/next arrow.svg" alt="">
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+          <div class="home_button">
+            <div class="home_button__container">
+
+
+              <div class="select_floor">
+                <img src="./pictures/floor.png" alt="#">
+                <a class="futura-medium-font medium btn" onclick="buttonScrolled()">
+                  <p class="paragraph">Select a floor</p>
                 </a>
               </div>
+
             </div>
-            <div class="work_section">
-              <div class="introduction">
-                <div class="work_section__container">
-                  <div class="heading">
-                    <p class="futura-bold-font big">see all of our hard work
-                      in action</p>
-                  </div>
-                  <div class="paragraph">
-                    <p class="futura-medium-font medium">out most proud projects that took our tema months to perfect and give it the face it deserved out most proud projects that took our tema months to perfect and give it the face it deserved out most</p>
-                  </div>
-                </div>
-              </div>
-              <div class="work_section__gif">
-                <div class="yellow"> </div>
-                  <div class="video"></div>
-               
-        
-              </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="hero_picture " id="main-picture" onClick="scaleOnPicture()">
+
+        <div class="carousel_slide">
+
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container" id="smoothScrolled">
+      <div class="building_section">
+        <div class="building_section__model"></div>
+        <div class="building_section__btn">
+          <a href="#">
+            <img src="./pictures/next_page.png" alt="next">
+          </a>
+        </div>
+      </div>
+      <div class="work_section">
+        <div class="introduction">
+          <div class="work_section__container">
+            <div class="heading">
+              <p class="futura-bold-font big">see all of our hard work
+                in action</p>
+            </div>
+            <div class="paragraph">
+              <p class="futura-medium-font medium">out most proud projects that took our tema months to perfect and give
+                it the face it deserved out most proud projects that took our tema months to perfect and give it the
+                face it deserved out most</p>
             </div>
           </div>
-          
-        </main>
-
-       
-
-
+        </div>
+        <div class="work_section__gif">
+          <div class="yellow"> </div>
+          <div class="video"></div>
 
 
+        </div>
+      </div>
+    </div>
 
-
-
-
-
+  </main>
 
 
 
 
 
 
-        <script src="./glider/glider.min.js" charset="utf-8"></script>
-    <script src="main.js" charset="utf-8"></script>
-  </body>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <script src="glider/glider.min.js" charset="utf-8"></script> -->
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
 </html>
