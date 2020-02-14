@@ -49,11 +49,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
     return cache[name].exports;
 
-    function localRequire(x) {
+    function localRequire(x){
       return newRequire(localRequire.resolve(x));
     }
 
-    function resolve(x) {
+    function resolve(x){
       return modules[name][1][x] || x;
     }
   }
@@ -96,13 +96,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     if (typeof exports === "object" && typeof module !== "undefined") {
       module.exports = mainExports;
 
-      // RequireJS
+    // RequireJS
     } else if (typeof define === "function" && define.amd) {
-      define(function () {
-        return mainExports;
-      });
+     define(function () {
+       return mainExports;
+     });
 
-      // <script>
+    // <script>
     } else if (globalName) {
       this[globalName] = mainExports;
     }
@@ -117,193 +117,188 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({
-  "main.js": [function (require, module, exports) {
-    function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+})({"main.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-    function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
 
-    function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
-    function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-    function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
-    function scaleOnPicture() {
-      var body_width = document.body.clientWidth;
-      var carousel_slide = document.querySelector(".carousel_slide");
-      var nav = document.getElementById("removedNav");
+function scaleOnPicture() {
+  var body_width = document.body.clientWidth;
+  var carousel_slide = document.querySelector(".carousel_slide");
+  var nav = document.getElementById("removedNav");
 
-      if (body_width >= 600) {
-        carousel_slide.classList.toggle("after-clicked");
-        nav.classList.toggle("removed_nav");
-      } else {
-        carousel_slide.classList.remove("after-clicked");
-      }
+  if (body_width >= 600) {
+    carousel_slide.classList.toggle("after-clicked");
+    nav.classList.toggle("removed_nav");
+  } else {
+    carousel_slide.classList.remove("after-clicked");
+  }
+}
+
+var updateDescription = function updateDescription(amountOfClicks, start) {
+  var index;
+  var prevElement;
+  var nextElement;
+
+  if (start) {
+    index = caruselImageElements.length - 1;
+  } else {
+    index = caruselImageElements.length - amountOfClicks - 1;
+  }
+
+  var focusElement = caruselImageElements[index];
+  focusElement.classList.add('focuse_image');
+
+  var otherImages = _toConsumableArray(caruselImageElements).filter(function (element) {
+    return element != focusElement;
+  });
+
+  otherImages.forEach(function (elem) {
+    return elem.classList.remove('focuse_image');
+  });
+  var backgroundImagePath = focusElement.attributes["src"].nodeValue;
+  backImage.style.backgroundImage = "url(\"".concat(backgroundImagePath, "\")");
+  var currentImgAtribute = focusElement.dataset;
+  description.innerHTML = " ".concat(currentImgAtribute.description, "<span class=\"futura-condensed-font\">  (").concat(currentImgAtribute.metres, "m) </span> ");
+}; ////  ====================================v
+///================== CARUSEL
+
+
+var carusel = document.querySelector(".carusel");
+var caruselImages = document.querySelectorAll(".carusel_div");
+var caruselImageElements = document.querySelectorAll(".carusel_image");
+var prevBtn = document.querySelector("#prevBtn");
+var nextBtn = document.querySelector("#nextBtn");
+var backImage = document.querySelector(".carousel_slide");
+var description = document.querySelector(".description");
+var color_radius = document.querySelector(".border");
+var amountOfClicks = 0;
+var size = caruselImages[0].clientWidth;
+var total = 0;
+var caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
+var caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
+var amount = caruselImageWidth + caruselImageRightMargin;
+document.addEventListener("resize", function () {
+  amountOfClicks = 0;
+  size = (_readOnlyError("size"), caruselImages[0].clientWidth);
+  total = 0;
+  caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
+  caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
+  amount = caruselImageWidth + caruselImageRightMargin;
+});
+updateDescription(caruselImageElements.length, true); //// NEXT-BTN
+
+nextBtn.addEventListener("click", function () {
+  amountOfClicks++;
+
+  if (amountOfClicks == caruselImages.length) {
+    total = 0;
+    amountOfClicks = 0;
+  } else {
+    if (amountOfClicks <= 0) {
+      prevBtn.classList.add("btn_opacity");
+    } else {
+      prevBtn.classList.remove("btn_opacity");
     }
 
-    var updateDescription = function updateDescription(amountOfClicks, start) {
-      var index;
-      var prevElement;
-      var nextElement;
+    total = total + amount;
+  }
 
-      if (start) {
-        index = caruselImageElements.length - 1;
-      } else {
-        index = caruselImageElements.length - amountOfClicks - 1;
-      }
+  updateDescription(amountOfClicks, false);
+  carusel.style.transform = "translateX(".concat(total, "px)");
+}); //// PREV-BTN
 
-      var focusElement = caruselImageElements[index];
-      focusElement.classList.add('focuse_image');
+prevBtn.addEventListener("click", function () {
+  amountOfClicks--;
 
-      var otherImages = _toConsumableArray(caruselImageElements).filter(function (element) {
-        return element != focusElement;
-      });
+  if (amountOfClicks <= 0) {
+    total = 0;
+    amountOfClicks = 0;
+    carusel.style.transform = "translateX(".concat(total, "px)");
+    prevBtn.classList.add("btn_opacity");
+  } else {
+    prevBtn.classList.remove("btn_opacity");
+    total = total - amount;
+  }
 
-      otherImages.forEach(function (elem) {
-        return elem.classList.remove('focuse_image');
-      });
-      var backgroundImagePath = focusElement.attributes["src"].nodeValue;
-      backImage.style.backgroundImage = "url(\"".concat(backgroundImagePath, "\")");
-      var currentImgAtribute = focusElement.dataset;
-      description.innerHTML = " ".concat(currentImgAtribute.description, "<span class=\"futura-condensed-font\">  (").concat(currentImgAtribute.metres, "m) </span> ");
-    }; ////  ====================================v
-    ///================== CARUSEL
+  updateDescription(amountOfClicks, false);
+  carusel.style.transform = "translateX(".concat(total, "px)");
+}); ////  ====================================v
+///==================
+//// ==================== FOR-NAVIGATION-WHEN SCROLLL
 
-
-    var carusel = document.querySelector(".carusel");
-    var caruselImages = document.querySelectorAll(".carusel_div");
-    var caruselImageElements = document.querySelectorAll(".carusel_image");
-    var prevBtn = document.querySelector("#prevBtn");
-    var nextBtn = document.querySelector("#nextBtn");
-    var backImage = document.querySelector(".carousel_slide");
-    var description = document.querySelector(".description");
-    var color_radius = document.querySelector(".border");
-    var amountOfClicks = 0;
-    var size = caruselImages[0].clientWidth;
-    var total = 0;
-    var caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
-    var caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
-    var amount = caruselImageWidth + caruselImageRightMargin;
-    document.addEventListener("resize", function () {
-      amountOfClicks = 0;
-      size = (_readOnlyError("size"), caruselImages[0].clientWidth);
-      total = 0;
-      caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
-      caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
-      amount = caruselImageWidth + caruselImageRightMargin;
-    });
-    updateDescription(caruselImageElements.length, true); //// NEXT-BTN
-
-    nextBtn.addEventListener("click", function () {
-      amountOfClicks++;
-
-      if (amountOfClicks == caruselImages.length) {
-        total = 0;
-        amountOfClicks = 0;
-      } else {
-        if (amountOfClicks <= 0) {
-          prevBtn.classList.add("btn_opacity");
-        } else {
-          prevBtn.classList.remove("btn_opacity");
-        }
-
-        total = total + amount;
-      }
-
-      updateDescription(amountOfClicks, false);
-      carusel.style.transform = "translateX(".concat(total, "px)");
-    }); //// PREV-BTN
-
-    prevBtn.addEventListener("click", function () {
-      amountOfClicks--;
-
-      if (amountOfClicks <= 0) {
-        total = 0;
-        amountOfClicks = 0;
-        carusel.style.transform = "translateX(".concat(total, "px)");
-        prevBtn.classList.add("btn_opacity");
-      } else {
-        prevBtn.classList.remove("btn_opacity");
-        total = total - amount;
-      }
-
-      updateDescription(amountOfClicks, false);
-      carusel.style.transform = "translateX(".concat(total, "px)");
-    }); ////  ====================================v
-    ///==================
-    //// ==================== FOR-NAVIGATION-WHEN SCROLLL
-
-    var navigation = document.querySelector(".navigation");
-    var sectionHero = document.querySelector(".hero_picture");
-    var sectionOptions = {
-      rootMargin: "-600px 0px 0px 0px"
-    };
-    var sectionOneObserver = new IntersectionObserver(function (entries, sectionOneObserver) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) {
-          navigation.classList.add("nav-scrolled");
-        } else {
-          navigation.classList.remove("nav-scrolled");
-        }
-      });
-    }, sectionOptions);
-    sectionOneObserver.observe(sectionHero); ///// =============NAV-BAR ANIMATIONS
-
-    var toggleOnNav = function toggleOnNav() {
-      var mobile_nav = document.querySelector(".new-opacity");
-      var active_hamburger = document.querySelector(".hamburger");
-      var new_nav = document.querySelector(".navigation");
-      var body = document.body;
-      body.classList.toggle("body-overflow");
-      mobile_nav.classList.toggle("mobile_nav");
-      active_hamburger.classList.toggle("active-burger");
-      new_nav.classList.toggle("new-nav");
-      console.log("clicked");
-    }; // Scroll to specific values
-    // scrollTo is the same
-
-
-    var buttonScrolled = function buttonScrolled() {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-      }); // Scroll certain amounts from current position
-
-      window.scrollBy({
-        top: 0,
-        // could be negative value
-        left: 0,
-        behavior: "smooth"
-      }); // Scroll to a certain element
-
-      document.querySelector("#smoothScrolled").scrollIntoView({
-        behavior: "smooth"
-      });
-      console.log("Clicked");
-    };
-  }, {}], "../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js": [function (require, module, exports) {
-    var global = arguments[3];
-    var OVERLAY_ID = '__parcel__error__overlay__';
-    var OldModule = module.bundle.Module;
-
-    function Module(moduleName) {
-      OldModule.call(this, moduleName);
-      this.hot = {
-        data: module.bundle.hotData,
-        _acceptCallbacks: [],
-        _disposeCallbacks: [],
-        accept: function (fn) {
-          this._acceptCallbacks.push(fn || function () { });
-        },
-        dispose: function (fn) {
-          this._disposeCallbacks.push(fn);
-        }
-      };
-      module.bundle.hotData = null;
+var navigation = document.querySelector(".navigation");
+var sectionHero = document.querySelector(".hero_picture");
+var sectionOptions = {
+  rootMargin: "-600px 0px 0px 0px"
+};
+var sectionOneObserver = new IntersectionObserver(function (entries, sectionOneObserver) {
+  entries.forEach(function (entry) {
+    if (!entry.isIntersecting) {
+      navigation.classList.add("nav-scrolled");
+    } else {
+      navigation.classList.remove("nav-scrolled");
     }
-<<<<<<< HEAD
+  });
+}, sectionOptions);
+sectionOneObserver.observe(sectionHero); ///// =============NAV-BAR ANIMATIONS
+
+var toggleOnNav = function toggleOnNav() {
+  var mobile_nav = document.querySelector(".new-opacity");
+  var active_hamburger = document.querySelector(".hamburger");
+  var new_nav = document.querySelector(".navigation");
+  var body = document.body;
+  body.classList.toggle("body-overflow");
+  mobile_nav.classList.toggle("mobile_nav");
+  active_hamburger.classList.toggle("active-burger");
+  new_nav.classList.toggle("new-nav");
+  console.log("clicked");
+}; // Scroll to specific values
+// scrollTo is the same
+
+
+var buttonScrolled = function buttonScrolled() {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  }); // Scroll certain amounts from current position
+
+  window.scrollBy({
+    top: 0,
+    // could be negative value
+    left: 0,
+    behavior: "smooth"
+  }); // Scroll to a certain element
+
+  document.querySelector("#smoothScrolled").scrollIntoView({
+    behavior: "smooth"
+  });
+  console.log("Clicked");
+};
+},{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
   };
   module.bundle.hotData = null;
 }
@@ -315,7 +310,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58908" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59160" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -330,192 +325,166 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
 
           if (didAccept) {
             handled = true;
-=======
-
-    module.bundle.Module = Module;
-    var checkedAssets, assetsToAccept;
-    var parent = module.bundle.parent;
-
-    if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-      var hostname = "" || location.hostname;
-      var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-      var ws = new WebSocket(protocol + '://' + hostname + ':' + "54137" + '/');
-
-      ws.onmessage = function (event) {
-        checkedAssets = {};
-        assetsToAccept = [];
-        var data = JSON.parse(event.data);
-
-        if (data.type === 'update') {
-          var handled = false;
-          data.assets.forEach(function (asset) {
-            if (!asset.isNew) {
-              var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
-              if (didAccept) {
-                handled = true;
-              }
-            }
-          }); // Enable HMR for CSS by default.
-
-          handled = handled || data.assets.every(function (asset) {
-            return asset.type === 'css' && asset.generated.js;
-          });
-
-          if (handled) {
-            console.clear();
-            data.assets.forEach(function (asset) {
-              hmrApply(global.parcelRequire, asset);
-            });
-            assetsToAccept.forEach(function (v) {
-              hmrAcceptRun(v[0], v[1]);
-            });
-          } else if (location.reload) {
-            // `location` global exists in a web worker context but lacks `.reload()` function.
-            location.reload();
->>>>>>> d0c4dc74200a8e8aab464629bdeee634a4139b51
           }
         }
+      }); // Enable HMR for CSS by default.
 
-        if (data.type === 'reload') {
-          ws.close();
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
+      });
 
-          ws.onclose = function () {
-            location.reload();
-          };
-        }
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
+    }
 
-        if (data.type === 'error-resolved') {
-          console.log('[parcel] ✨ Error resolved');
-          removeErrorOverlay();
-        }
+    if (data.type === 'reload') {
+      ws.close();
 
-        if (data.type === 'error') {
-          console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
-          removeErrorOverlay();
-          var overlay = createErrorOverlay(data);
-          document.body.appendChild(overlay);
-        }
+      ws.onclose = function () {
+        location.reload();
       };
     }
 
-    function removeErrorOverlay() {
-      var overlay = document.getElementById(OVERLAY_ID);
-
-      if (overlay) {
-        overlay.remove();
-      }
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
     }
 
-    function createErrorOverlay(data) {
-      var overlay = document.createElement('div');
-      overlay.id = OVERLAY_ID; // html encode message and stack trace
-
-      var message = document.createElement('div');
-      var stackTrace = document.createElement('pre');
-      message.innerText = data.error.message;
-      stackTrace.innerText = data.error.stack;
-      overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
-      return overlay;
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
     }
+  };
+}
 
-    function getParents(bundle, id) {
-      var modules = bundle.modules;
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
 
-      if (!modules) {
-        return [];
-      }
+  if (overlay) {
+    overlay.remove();
+  }
+}
 
-      var parents = [];
-      var k, d, dep;
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
 
-      for (k in modules) {
-        for (d in modules[k][1]) {
-          dep = modules[k][1][d];
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
 
-          if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
-            parents.push(k);
-          }
-        }
-      }
+function getParents(bundle, id) {
+  var modules = bundle.modules;
 
-      if (bundle.parent) {
-        parents = parents.concat(getParents(bundle.parent, id));
-      }
+  if (!modules) {
+    return [];
+  }
 
-      return parents;
-    }
+  var parents = [];
+  var k, d, dep;
 
-    function hmrApply(bundle, asset) {
-      var modules = bundle.modules;
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
 
-      if (!modules) {
-        return;
-      }
-
-      if (modules[asset.id] || !bundle.parent) {
-        var fn = new Function('require', 'module', 'exports', asset.generated.js);
-        asset.isNew = !modules[asset.id];
-        modules[asset.id] = [fn, asset.deps];
-      } else if (bundle.parent) {
-        hmrApply(bundle.parent, asset);
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
       }
     }
+  }
 
-    function hmrAcceptCheck(bundle, id) {
-      var modules = bundle.modules;
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
 
-      if (!modules) {
-        return;
-      }
+  return parents;
+}
 
-      if (!modules[id] && bundle.parent) {
-        return hmrAcceptCheck(bundle.parent, id);
-      }
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
 
-      if (checkedAssets[id]) {
-        return;
-      }
+  if (!modules) {
+    return;
+  }
 
-      checkedAssets[id] = true;
-      var cached = bundle.cache[id];
-      assetsToAccept.push([bundle, id]);
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
 
-      if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-        return true;
-      }
+function hmrAcceptCheck(bundle, id) {
+  var modules = bundle.modules;
 
-      return getParents(global.parcelRequire, id).some(function (id) {
-        return hmrAcceptCheck(global.parcelRequire, id);
-      });
-    }
+  if (!modules) {
+    return;
+  }
 
-    function hmrAcceptRun(bundle, id) {
-      var cached = bundle.cache[id];
-      bundle.hotData = {};
+  if (!modules[id] && bundle.parent) {
+    return hmrAcceptCheck(bundle.parent, id);
+  }
 
-      if (cached) {
-        cached.hot.data = bundle.hotData;
-      }
+  if (checkedAssets[id]) {
+    return;
+  }
 
-      if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
-        cached.hot._disposeCallbacks.forEach(function (cb) {
-          cb(bundle.hotData);
-        });
-      }
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
 
-      delete bundle.cache[id];
-      bundle(id);
-      cached = bundle.cache[id];
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
 
-      if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-        cached.hot._acceptCallbacks.forEach(function (cb) {
-          cb();
-        });
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
 
-        return true;
-      }
-    }
-  }, {}]
-}, {}, ["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js", "main.js"], null)
+function hmrAcceptRun(bundle, id) {
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+
+    return true;
+  }
+}
+},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
 //# sourceMappingURL=/main.1f19ae8e.js.map
