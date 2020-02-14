@@ -19,6 +19,13 @@
   .hero .hero_about .home_address__container {
     width: 80%;
   }
+  .hero {
+    .home_carusel {
+      &__container {
+        width: calc(46.3% * 6) !important;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 950px) {
