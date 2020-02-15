@@ -55,6 +55,10 @@
   margin-left: 1vw;
 }
 
+.border-left {
+  border-left: 1px solid #ffa800;
+}
+
 .focuse_image {
   border: 2px solid white;
   transform: scale(1.02);
@@ -223,7 +227,7 @@ html {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 20%;
-  width: 20%;
+  width: 16%;
 }
 .hero .hero_about .home_button__container .select_floor .btn {
   color: #ffff;
@@ -439,6 +443,28 @@ main .about .main_container {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+main .about .main_container .side_section {
+  position: absolute;
+  transform: translate(-50%, -50%) rotateZ(-90deg);
+  width: 40rem;
+  left: 3%;
+  top: 56%;
+}
+main .about .main_container .side_section__container {
+  width: 100%;
+  height: 100%;
+}
+main .about .main_container .side_section__container ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+main .about .main_container .side_section__container ul a {
+  color: #000000;
+  text-decoration: none;
 }
 main .about .wrapper {
   width: 75%;
@@ -467,14 +493,15 @@ main .about .main_text .paragraph {
 }
 main .about .apartaments_section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-column: auto 1fr 1fr 1fr;
+  border-top: 1px solid #ffa800;
 }
 main .about .apartaments_section .about_apartaments__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-around;
   height: 100%;
+  width: 14.5vw;
 }
 main .about .apartaments_section .bedroom {
   display: flex;
@@ -482,22 +509,26 @@ main .about .apartaments_section .bedroom {
   justify-content: space-evenly;
 }
 main .about .apartaments_section .bedroom .picture {
-  padding: 1.9vw 0vw 0vw 0vw;
+  align-self: center;
+  padding: 1.5vw 0vw 0vw 0vw;
+  margin-left: 4vw;
 }
 main .about .apartaments_section .bedroom .picture img {
+  width: 100%;
   height: 100%;
   border-radius: 14px;
-  box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
+  box-shadow: 20px 25px 28px rgba(0, 0, 0, 0.25);
 }
 main .about .apartaments_section .bedroom .about_room {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-left: 4vw;
 }
 main .about .apartaments_section .bedroom .about_room__number {
   opacity: 60%;
-  margin-bottom: 0.8vw;
+  margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -521,6 +552,18 @@ main .about .apartaments_section .bedroom .about_room__number {
 
   .hero .home_carusel__container {
     width: calc(46.3% * 6) !important;
+  }
+
+  .about_apartaments__container div {
+    letter-spacing: initial !important;
+  }
+
+  .bedroom .picture {
+    margin-left: 1.5vw;
+    padding: initial !important;
+  }
+  .bedroom .picture img {
+    width: 95% !important;
   }
 }
 @media only screen and (max-width: 950px) {
@@ -640,7 +683,7 @@ main .about .apartaments_section .bedroom .about_room__number {
 }
 .navigation__menu {
   width: 50%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;

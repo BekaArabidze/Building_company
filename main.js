@@ -152,7 +152,7 @@ const sectionOneObserver = new IntersectionObserver(function (
 sectionOneObserver.observe(sectionHero);
 
 ///// =============NAV-BAR ANIMATIONS
-const toggleOnNav = () => {
+const toggleNav = () => {
   const mobile_nav = document.querySelector(".new-opacity");
   const active_hamburger = document.querySelector(".hamburger");
   const new_nav = document.querySelector(".navigation");

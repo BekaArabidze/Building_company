@@ -26,6 +26,25 @@
       }
     }
   }
+
+  .about_apartaments {
+    &__container {
+      div {
+        letter-spacing: initial !important;
+      }
+    }
+  }
+  .bedroom {
+    .picture {
+      margin-left: 1.5vw;
+      // padding: 2.5vw 0vw 0vw 0vw;
+      padding: initial !important;
+      img {
+        width: 95% !important;
+        // height: 85% !important;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 950px) {
