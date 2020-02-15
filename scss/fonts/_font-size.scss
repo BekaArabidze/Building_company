@@ -1,31 +1,25 @@
 .biggest {
-  font-size: calc(
-    20px + (49 - 20) * ((100vw - 300px) / (1900 - 700))
-  ) !important;
+  font-size: calc(20px + (55 - 20) * ((100vw - 300px) / (1900 - 700))) !important;
   letter-spacing: 1.1px;
   line-height: 135%;
 }
 
 .big {
-  font-size: calc(
-    17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))
-  ) !important;
+  font-size: calc(17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))) !important;
+}
+
+.less_bigger {
+  font-size: calc(15px + (25 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .regular {
-  font-size: calc(
-    15px + (21 - 15) * ((100vw - 300px) / (1900 - 700))
-  ) !important;
+  font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .medium {
-  font-size: calc(
-    15px + (17 - 15) * ((100vw - 300px) / (1900 - 700))
-  ) !important;
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .small {
-  font-size: calc(
-    12px + (18 - 12) * ((100vw - 300px) / (1900 - 700))
-  ) !important;
+  font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1900 - 700))) !important;
 }

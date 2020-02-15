@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   .hero_picture {
     width: 100%;
     height: 100%;
@@ -25,6 +26,7 @@
   .hero_about {
     background: no-repeat url("./../pictures/background.png");
     @include backgroundProperty;
+    // background-color: green;
 
     &__container {
       width: 100%;
@@ -33,6 +35,7 @@
       grid-template-rows: 1fr 1fr auto;
       align-items: center;
     }
+
     .home_address {
       display: flex;
       justify-content: flex-end;
@@ -45,12 +48,15 @@
         width: 75%;
         justify-content: center;
       }
+
       .heading {
         width: 100%;
       }
+
       .paragraph {
         opacity: 40%;
         margin-top: 1.5vw;
+
         p {
           width: 67%;
         }
@@ -70,6 +76,7 @@
 
         .select_floor {
           cursor: pointer;
+
           // transition: all 2s ease;
           img {
             position: absolute;
@@ -132,6 +139,7 @@
           height: 10vw;
 
           width: 17vw;
+
           img {
             width: 100%;
             height: 100%;
@@ -167,16 +175,14 @@
         height: 7.4vw;
         position: absolute;
         justify-content: space-between;
-        align-items: end;
-
-        // left: 13.5vw;
-
+        align-items: flex-end;
         top: -3vw;
 
         .paragraph {
           .display_none {
             display: none;
           }
+
           .display_block {
             display: block !important;
             transform: translateX(10%);
@@ -205,6 +211,7 @@
           margin-right: 10%;
           display: flex;
           align-items: center;
+
           .prev,
           .next {
             img {
@@ -233,10 +240,12 @@ main {
     grid-template-columns: 2.2fr 1fr;
     // margin-top: 20rem;
   }
+
   .building_section {
     position: relative;
     width: 100%;
     height: 100%;
+
     &__model {
       width: 100%;
       height: 100%;
@@ -261,6 +270,7 @@ main {
       cursor: pointer;
     }
   }
+
   .work_section {
     display: grid;
     grid-template-rows: 2fr 1fr;
@@ -302,6 +312,7 @@ main {
       align-items: center;
       justify-content: center;
       position: relative;
+
       .yellow {
         width: 100%;
         height: 100%;
@@ -323,6 +334,83 @@ main {
         width: 50%;
         height: 80%;
       }
+    }
+  }
+
+  .about {
+    height: 100vh;
+
+    .main_container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrapper {
+      width: 75%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .main_text {
+      position: relative;
+      background-color: gainsboro;
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: no-repeat url("./../pictures/number_one.png");
+      background-size: 22%;
+      background-position: 0% 17%;
+      object-fit: cover;
+
+      // &:after {
+      //   content: "";
+      //   transform: translate(-50%, -50%);
+      //   position: absolute;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: no-repeat url("./../pictures/number_one.png");
+      //   @include backgroundProperty;
+      //   // top: 39%;
+      //   // left: 50%;
+      //   // z-index: -1;
+      // }
+
+      .heading {
+        margin-bottom: 3vw;
+
+      }
+
+      .paragraph {
+        width: 62%;
+
+      }
+    }
+
+    .apartaments_section {
+      background-color: beige;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+
+      .about_apartaments {
+
+        &__container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          width: 100%;
+          height: 100%;
+
+        }
+      }
+
     }
   }
 }

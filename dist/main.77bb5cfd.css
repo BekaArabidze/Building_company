@@ -43,6 +43,18 @@
   z-index: -1;
 }
 
+.margin_bottom {
+  margin-bottom: 1.5vw;
+}
+
+.letter-spacing {
+  letter-spacing: 5px;
+}
+
+.margin-left {
+  margin-left: 1vw;
+}
+
 .focuse_image {
   border: 2px solid white;
   transform: scale(1.02);
@@ -96,25 +108,29 @@ html {
   src: url("/Futura-CondensedLight.b52ce36b.otf");
 }
 .biggest {
-  font-size: calc( 20px + (49 - 20) * ((100vw - 300px) / (1900 - 700)) ) !important;
+  font-size: calc(20px + (55 - 20) * ((100vw - 300px) / (1900 - 700))) !important;
   letter-spacing: 1.1px;
   line-height: 135%;
 }
 
 .big {
-  font-size: calc( 17px + (40 - 17) * ((100vw - 300px) / (1900 - 700)) ) !important;
+  font-size: calc(17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))) !important;
+}
+
+.less_bigger {
+  font-size: calc(15px + (25 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .regular {
-  font-size: calc( 15px + (21 - 15) * ((100vw - 300px) / (1900 - 700)) ) !important;
+  font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .medium {
-  font-size: calc( 15px + (17 - 15) * ((100vw - 300px) / (1900 - 700)) ) !important;
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .small {
-  font-size: calc( 12px + (18 - 12) * ((100vw - 300px) / (1900 - 700)) ) !important;
+  font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1900 - 700))) !important;
 }
 
 .futura-bold-font {
@@ -281,7 +297,7 @@ html {
   height: 7.4vw;
   position: absolute;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   top: -3vw;
 }
 .hero .home_carusel .about_room .container .paragraph .display_none {
@@ -415,6 +431,53 @@ main .work_section__gif .video {
   width: 50%;
   height: 80%;
 }
+main .about {
+  height: 100vh;
+}
+main .about .main_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .about .wrapper {
+  width: 75%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+main .about .main_text {
+  position: relative;
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: no-repeat url("/number_one.869fb53e.png");
+  background-size: 22%;
+  background-position: 0% 17%;
+  object-fit: cover;
+}
+main .about .main_text .heading {
+  margin-bottom: 3vw;
+}
+main .about .main_text .paragraph {
+  width: 62%;
+}
+main .about .apartaments_section {
+  background-color: beige;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+main .about .apartaments_section .about_apartaments__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
 
 @media only screen and (max-width: 1500px) {
   .home_button {
@@ -433,6 +496,10 @@ main .work_section__gif .video {
 
   .hero .hero_about .home_address__container {
     width: 80%;
+  }
+
+  .hero .home_carusel__container {
+    width: calc(46.3% * 6) !important;
   }
 }
 @media only screen and (max-width: 950px) {
@@ -527,7 +594,7 @@ main .work_section__gif .video {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 4vw;
+  height: 8rem;
   padding: 0 2.3vw;
   z-index: 99;
   position: fixed;
@@ -573,7 +640,6 @@ main .work_section__gif .video {
   text-decoration: none;
   font-size: 1.6rem;
   color: #ffff;
-  font-weight: 600;
   transition: all 0.2s;
 }
 .navigation__menu__list__items a:hover {
@@ -594,6 +660,7 @@ main .work_section__gif .video {
   background-color: white;
   transition: 0.2s all ease-in;
   box-shadow: 0px 20px 60px -24px rgba(0, 0, 0, 0.3);
+  height: 6.5rem;
 }
 .nav-scrolled a {
   color: black;
@@ -681,7 +748,6 @@ main .work_section__gif .video {
   .mobile_nav__container .mobile__menu__list__items a {
     text-decoration: none;
     color: black;
-    font-weight: 600;
     font-size: 1.8rem;
   }
   .mobile_nav__container .mobile__menu__list__items a:hover {
