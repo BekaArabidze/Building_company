@@ -108,29 +108,29 @@ html {
   src: url("/Futura-CondensedLight.b52ce36b.otf");
 }
 .biggest {
-  font-size: calc(20px + (55 - 20) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 20px + (55 - 20) * ((100vw - 300px) / (1900 - 700)) ) !important;
   letter-spacing: 1.1px;
   line-height: 135%;
 }
 
 .big {
-  font-size: calc(17px + (40 - 17) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 17px + (40 - 17) * ((100vw - 300px) / (1900 - 700)) ) !important;
 }
 
 .less_bigger {
-  font-size: calc(15px + (25 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 15px + (25 - 15) * ((100vw - 300px) / (1900 - 700)) ) !important;
 }
 
 .regular {
-  font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 15px + (20 - 15) * ((100vw - 300px) / (1900 - 700)) ) !important;
 }
 
 .medium {
-  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 14px + (18 - 14) * ((100vw - 300px) / (1900 - 700)) ) !important;
 }
 
 .small {
-  font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1900 - 700))) !important;
+  font-size: calc( 13px + (14 - 13) * ((100vw - 300px) / (1900 - 700)) ) !important;
 }
 
 .futura-bold-font {
@@ -445,7 +445,7 @@ main .about .wrapper {
   width: 75%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.9fr 1fr;
 }
 main .about .main_text {
   position: relative;
@@ -467,7 +467,6 @@ main .about .main_text .paragraph {
   width: 62%;
 }
 main .about .apartaments_section {
-  background-color: beige;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -477,6 +476,29 @@ main .about .apartaments_section .about_apartaments__container {
   justify-content: space-evenly;
   width: 100%;
   height: 100%;
+}
+main .about .apartaments_section .bedroom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main .about .apartaments_section .bedroom .picture {
+  padding: 1.9vw 0vw 0vw 0vw;
+}
+main .about .apartaments_section .bedroom .picture img {
+  height: 100%;
+  border-radius: 14px;
+  box-shadow: 0px 25px 60px -20px rgba(0, 0, 0, 0.2);
+}
+main .about .apartaments_section .bedroom .about_room {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main .about .apartaments_section .bedroom .about_room__number {
+  opacity: 60%;
+  margin-bottom: 0.8vw;
 }
 
 @media only screen and (max-width: 1500px) {
