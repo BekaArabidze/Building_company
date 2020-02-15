@@ -349,7 +349,6 @@ main .building_section {
 main .building_section__model {
   width: 100%;
   height: 100%;
-  background: no-repeat url("/building.b0f941db.png");
   background-size: cover;
   background-position: center;
   object-fit: cover;

@@ -249,7 +249,7 @@ main {
     &__model {
       width: 100%;
       height: 100%;
-      background: no-repeat url("./../pictures/building.png");
+      // background: no-repeat url("./../pictures/building.png");
       @include backgroundProperty;
     }
 
