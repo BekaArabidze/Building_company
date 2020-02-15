@@ -245,10 +245,6 @@ var sectionOneObserver = new IntersectionObserver(function (entries, sectionOneO
     } else {
       navigation.classList.remove("nav-scrolled");
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
   });
 }, sectionOptions);
 sectionOneObserver.observe(sectionHero); ///// =============NAV-BAR ANIMATIONS
@@ -286,11 +282,7 @@ var buttonScrolled = function buttonScrolled() {
   });
   console.log("Clicked");
 };
-<<<<<<< HEAD
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
-=======
-},{}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -307,12 +299,6 @@ function Module(moduleName) {
     dispose: function (fn) {
       this._disposeCallbacks.push(fn);
     }
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
->>>>>>> c8a172a0bee946ec2840a9e192b92d67af38d53e
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
   };
   module.bundle.hotData = null;
 }
@@ -324,15 +310,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59160" + '/');
-=======
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54263" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58908" + '/');
->>>>>>> c8a172a0bee946ec2840a9e192b92d67af38d53e
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50047" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -347,56 +325,6 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
 
           if (didAccept) {
             handled = true;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-
-    module.bundle.Module = Module;
-    var checkedAssets, assetsToAccept;
-    var parent = module.bundle.parent;
-
-    if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-      var hostname = "" || location.hostname;
-      var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-      var ws = new WebSocket(protocol + '://' + hostname + ':' + "54137" + '/');
-
-      ws.onmessage = function (event) {
-        checkedAssets = {};
-        assetsToAccept = [];
-        var data = JSON.parse(event.data);
-
-        if (data.type === 'update') {
-          var handled = false;
-          data.assets.forEach(function (asset) {
-            if (!asset.isNew) {
-              var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
-              if (didAccept) {
-                handled = true;
-              }
-            }
-          }); // Enable HMR for CSS by default.
-
-          handled = handled || data.assets.every(function (asset) {
-            return asset.type === 'css' && asset.generated.js;
-          });
-
-          if (handled) {
-            console.clear();
-            data.assets.forEach(function (asset) {
-              hmrApply(global.parcelRequire, asset);
-            });
-            assetsToAccept.forEach(function (v) {
-              hmrAcceptRun(v[0], v[1]);
-            });
-          } else if (location.reload) {
-            // `location` global exists in a web worker context but lacks `.reload()` function.
-            location.reload();
->>>>>>> d0c4dc74200a8e8aab464629bdeee634a4139b51
->>>>>>> c8a172a0bee946ec2840a9e192b92d67af38d53e
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
           }
         }
       }); // Enable HMR for CSS by default.
@@ -510,7 +438,6 @@ function hmrAcceptCheck(bundle, id) {
   if (!modules) {
     return;
   }
-<<<<<<< HEAD
 
   if (!modules[id] && bundle.parent) {
     return hmrAcceptCheck(bundle.parent, id);
@@ -551,48 +478,6 @@ function hmrAcceptRun(bundle, id) {
   bundle(id);
   cached = bundle.cache[id];
 
-=======
-
-  if (!modules[id] && bundle.parent) {
-    return hmrAcceptCheck(bundle.parent, id);
-  }
-
-  if (checkedAssets[id]) {
-    return;
-  }
-
-  checkedAssets[id] = true;
-  var cached = bundle.cache[id];
-  assetsToAccept.push([bundle, id]);
-
-  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
-    return true;
-  }
-
-  return getParents(global.parcelRequire, id).some(function (id) {
-    return hmrAcceptCheck(global.parcelRequire, id);
-  });
-}
-
-function hmrAcceptRun(bundle, id) {
-  var cached = bundle.cache[id];
-  bundle.hotData = {};
-
-  if (cached) {
-    cached.hot.data = bundle.hotData;
-  }
-
-  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
-    cached.hot._disposeCallbacks.forEach(function (cb) {
-      cb(bundle.hotData);
-    });
-  }
-
-  delete bundle.cache[id];
-  bundle(id);
-  cached = bundle.cache[id];
-
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     cached.hot._acceptCallbacks.forEach(function (cb) {
       cb();
@@ -601,9 +486,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-<<<<<<< HEAD
 },{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
-=======
-},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
->>>>>>> 9dfe3ad561a0dc854d12fa3605a3a68eeaa55fe7
 //# sourceMappingURL=/main.1f19ae8e.js.map
