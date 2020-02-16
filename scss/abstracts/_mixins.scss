@@ -9,3 +9,10 @@
   background-position: center;
   object-fit: cover;
 }
+
+@mixin flex-template-for-footer {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-evenly;
+  align-items: center;
+}

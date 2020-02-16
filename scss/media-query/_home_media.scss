@@ -2,6 +2,7 @@
   .home_button {
     align-self: self-end;
     height: initial;
+
     .select_floor {
       .btn {
         width: 25vw !important;
@@ -9,6 +10,7 @@
       }
     }
   }
+
   .about_room {
     .container {
       width: 55% !important;
@@ -19,6 +21,7 @@
   .hero .hero_about .home_address__container {
     width: 80%;
   }
+
   .hero {
     .home_carusel {
       &__container {
@@ -34,14 +37,42 @@
       }
     }
   }
+
   .bedroom {
     .picture {
       margin-left: 1.5vw;
       // padding: 2.5vw 0vw 0vw 0vw;
       padding: initial !important;
+
       img {
-        width: 95% !important;
+        // width: 95% !important;
         // height: 85% !important;
+      }
+    }
+  }
+
+  .footer {
+    .heading {
+      text-align: center;
+    }
+
+    .section_introduction {
+      .contact_btn {
+        // width: 100%;
+
+        .btn-small-fill {
+          width: 85%;
+          padding: 1.5rem 2rem 1.5rem 2rem;
+          margin: 0 auto;
+        }
+      }
+
+      .octagons_img {
+        background: no-repeat url("/pictures/balls.png");
+
+        top: -14%;
+        z-index: -1;
+        // display: none;
       }
     }
   }
@@ -68,6 +99,7 @@
         top: 0vw !important;
       }
     }
+
     &__container {
       height: initial;
       grid-template-columns: initial;
@@ -87,9 +119,11 @@
         // width: 30rem !important;
         // padding: 2.5rem !important;
       }
+
       .home_button {
         align-self: self-end;
         height: initial;
+
         .select_floor {
           .btn {
             width: 25rem !important;
@@ -97,16 +131,20 @@
           }
         }
       }
+
       .home_address {
         &__container {
           width: 100%;
           // margin-top: 8.5rem;
           margin: initial;
         }
+
         margin: initial;
         padding: $padding;
+
         .paragraph {
           width: 100%;
+
           p {
             width: 82%;
           }
@@ -117,6 +155,7 @@
     .home_carusel {
       overflow: hidden;
       width: initial;
+
       // height: 100%;
       .about_room {
         .container {
@@ -125,6 +164,7 @@
           left: initial;
         }
       }
+
       &__container {
         transform: translateX(-61%);
 
@@ -133,6 +173,7 @@
 
         .carusel {
           height: 100%;
+
           // display: none;
           div {
             height: 25vw !important;
@@ -143,6 +184,7 @@
     }
   }
 }
+
 @media only screen and (max-width: 750px) {
   main {
     .container {
@@ -155,6 +197,7 @@
 
       .work_section {
         grid-template-rows: 1fr 1fr;
+
         &__container {
           padding: 0 4vw !important;
           width: initial;

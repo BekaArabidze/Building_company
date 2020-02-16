@@ -59,6 +59,19 @@
   border-left: 1px solid #ffa800;
 }
 
+.new_btn {
+  color: #ffff;
+  width: 15rem;
+  height: 100%;
+  background: #ffa800;
+  box-shadow: 0px -15px 40px rgba(255, 168, 0, 0.2);
+  border-radius: 3px;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
 .focuse_image {
   border: 2px solid white;
   transform: scale(1.02);
@@ -234,7 +247,7 @@ html {
   width: 35rem;
   height: 100%;
   background: #ffa800;
-  box-shadow: 0px -16px 48px rgba(255, 168, 0, 0.36);
+  box-shadow: 0px -15px 40px rgba(255, 168, 0, 0.2);
   border-radius: 14px 14px 0px 0px;
   padding: 3rem;
   display: block;
@@ -493,7 +506,7 @@ main .about .main_text .paragraph {
 }
 main .about .apartaments_section {
   display: grid;
-  grid-template-column: auto 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr;
   border-top: 1px solid #ffa800;
 }
 main .about .apartaments_section .about_apartaments__container {
@@ -502,6 +515,10 @@ main .about .apartaments_section .about_apartaments__container {
   justify-content: space-around;
   height: 100%;
   width: 14.5vw;
+}
+main .about .apartaments_section .room_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 main .about .apartaments_section .bedroom {
   display: flex;
@@ -514,23 +531,90 @@ main .about .apartaments_section .bedroom .picture {
   margin-left: 4vw;
 }
 main .about .apartaments_section .bedroom .picture img {
-  width: 100%;
+  width: 95%;
   height: 100%;
   border-radius: 14px;
-  box-shadow: 20px 25px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.25);
 }
 main .about .apartaments_section .bedroom .about_room {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-left: 4vw;
+  margin-left: 4.5vw;
+  margin-top: 0.7vw;
 }
 main .about .apartaments_section .bedroom .about_room__number {
   opacity: 60%;
   margin-bottom: 1rem;
 }
-
+main .footer {
+  background-color: white;
+  height: 120vh;
+  width: 100%;
+  position: relative;
+  margin-top: 15rem;
+}
+main .footer_container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+main .footer .section_introduction {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #000000;
+  z-index: 9;
+}
+main .footer .section_introduction .paragraph-1 p {
+  text-align: center;
+}
+main .footer .section_introduction .octagons_img {
+  width: 95%;
+  height: 95%;
+  background: no-repeat url("/balls.7a81a6f3.png");
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: -12%;
+  z-index: -1;
+}
+main .footer .section_contact {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  color: #000000;
+  z-index: 9;
+}
+main .footer .section_contact__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .footer .section_contact__networks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .footer .section_contact__address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .footer .section_contact ul li {
+  list-style-type: none;
+  padding: 1rem;
+}
+main .footer .section_contact ul li a {
+  text-decoration: none;
+  color: #000000;
+}
 @media only screen and (max-width: 1500px) {
   .home_button {
     align-self: self-end;
@@ -562,8 +646,18 @@ main .about .apartaments_section .bedroom .about_room__number {
     margin-left: 1.5vw;
     padding: initial !important;
   }
-  .bedroom .picture img {
-    width: 95% !important;
+  .footer .heading {
+    text-align: center;
+  }
+  .footer .section_introduction .contact_btn .btn-small-fill {
+    width: 85%;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    margin: 0 auto;
+  }
+  .footer .section_introduction .octagons_img {
+    background: no-repeat url("/balls.7a81a6f3.png");
+    top: -14%;
+    z-index: -1;
   }
 }
 @media only screen and (max-width: 950px) {

@@ -55,6 +55,20 @@
 .margin-left {
   margin-left: 1vw;
 }
+
 .border-left {
   border-left: 1px solid $light-orange;
+}
+
+.new_btn {
+  color: $white;
+  width: 15rem;
+  height: 100%;
+  background: $light-orange;
+  box-shadow: $select-btn-shadow;
+  border-radius: 3px;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
 }
