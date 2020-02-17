@@ -153,14 +153,14 @@ var updateDescription = function updateDescription(amountOfClicks, start) {
   }
 
   var focusElement = caruselImageElements[index];
-  focusElement.classList.add('focuse_image');
+  focusElement.classList.add("focuse_image");
 
   var otherImages = _toConsumableArray(caruselImageElements).filter(function (element) {
     return element != focusElement;
   });
 
   otherImages.forEach(function (elem) {
-    return elem.classList.remove('focuse_image');
+    return elem.classList.remove("focuse_image");
   });
   var backgroundImagePath = focusElement.attributes["src"].nodeValue;
   backImage.style.backgroundImage = "url(\"".concat(backgroundImagePath, "\")");
@@ -282,6 +282,16 @@ var buttonScrolled = function buttonScrolled() {
   });
   console.log("Clicked");
 };
+
+var myFunction = function myFunction() {
+  var screen_container = document.querySelector(".loading_screen__container");
+  screen_container.style.transform = "translateX(0deg)";
+  console.log("clicked");
+}; // let loadingScreen = document.querySelector(".loading_screen");
+// // let loadingScreen = document.querySelector(".loading_screen");
+// let loading = window.addEventListener("load", _ => {
+//   document.body.removeChild(loadingScreen);
+// });
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -310,7 +320,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50164" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57494" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

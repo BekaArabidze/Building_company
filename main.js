@@ -10,10 +10,6 @@ function scaleOnPicture() {
   }
 }
 
-
-
-
-
 const updateDescription = (amountOfClicks, start) => {
   let index;
 
@@ -25,27 +21,20 @@ const updateDescription = (amountOfClicks, start) => {
     index = caruselImageElements.length - amountOfClicks - 1;
   }
 
+  let focusElement = caruselImageElements[index];
+  focusElement.classList.add("focuse_image");
 
-
-
-  let focusElement = caruselImageElements[index]
-  focusElement.classList.add('focuse_image')
-
-  let otherImages = [...caruselImageElements].filter(element => element != focusElement)
-  otherImages.forEach(elem => elem.classList.remove('focuse_image'))
-
+  let otherImages = [...caruselImageElements].filter(
+    element => element != focusElement
+  );
+  otherImages.forEach(elem => elem.classList.remove("focuse_image"));
 
   let backgroundImagePath = focusElement.attributes["src"].nodeValue;
   backImage.style.backgroundImage = `url("${backgroundImagePath}")`;
 
   let currentImgAtribute = focusElement.dataset;
   description.innerHTML = ` ${currentImgAtribute.description}<span class="futura-condensed-font">  (${currentImgAtribute.metres}m) </span> `;
-}
-
-
-
-
-
+};
 
 ////  ====================================v
 ///================== CARUSEL
@@ -64,8 +53,12 @@ let amountOfClicks = 0;
 const size = caruselImages[0].clientWidth;
 
 let total = 0;
-let caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
-let caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
+let caruselImageWidth = Math.floor(
+  getComputedStyle(caruselImages[0]).width.split("px")[0]
+);
+let caruselImageRightMargin = parseInt(
+  getComputedStyle(caruselImages[0]).marginRight.split("px")[0]
+);
 
 let amount = caruselImageWidth + caruselImageRightMargin;
 
@@ -73,12 +66,16 @@ document.addEventListener("resize", () => {
   amountOfClicks = 0;
   size = caruselImages[0].clientWidth;
   total = 0;
-  caruselImageWidth = Math.floor(getComputedStyle(caruselImages[0]).width.split("px")[0]);
-  caruselImageRightMargin = parseInt(getComputedStyle(caruselImages[0]).marginRight.split("px")[0]);
+  caruselImageWidth = Math.floor(
+    getComputedStyle(caruselImages[0]).width.split("px")[0]
+  );
+  caruselImageRightMargin = parseInt(
+    getComputedStyle(caruselImages[0]).marginRight.split("px")[0]
+  );
   amount = caruselImageWidth + caruselImageRightMargin;
 });
 
-updateDescription(caruselImageElements.length, true)
+updateDescription(caruselImageElements.length, true);
 
 //// NEXT-BTN
 nextBtn.addEventListener("click", () => {
@@ -94,7 +91,7 @@ nextBtn.addEventListener("click", () => {
     }
     total = total + amount;
   }
-  updateDescription(amountOfClicks, false)
+  updateDescription(amountOfClicks, false);
   carusel.style.transform = `translateX(${total}px)`;
 });
 
@@ -111,19 +108,9 @@ prevBtn.addEventListener("click", () => {
     prevBtn.classList.remove("btn_opacity");
     total = total - amount;
   }
-  updateDescription(amountOfClicks, false)
+  updateDescription(amountOfClicks, false);
   carusel.style.transform = `translateX(${total}px)`;
 });
-
-
-
-
-
-
-
-
-
-
 
 ////  ====================================v
 ///==================
@@ -135,7 +122,7 @@ const sectionOptions = {
   rootMargin: "-600px 0px 0px 0px"
 };
 
-const sectionOneObserver = new IntersectionObserver(function (
+const sectionOneObserver = new IntersectionObserver(function(
   entries,
   sectionOneObserver
 ) {
@@ -147,7 +134,7 @@ const sectionOneObserver = new IntersectionObserver(function (
     }
   });
 },
-  sectionOptions);
+sectionOptions);
 
 sectionOneObserver.observe(sectionHero);
 
@@ -168,7 +155,6 @@ const toggleNav = () => {
 
 // Scroll to specific values
 // scrollTo is the same
-
 const buttonScrolled = () => {
   window.scroll({
     top: 0,
@@ -190,30 +176,16 @@ const buttonScrolled = () => {
   console.log("Clicked");
 };
 
+const myFunction = () => {
+  let screen_container = document.querySelector(".loading_screen__container");
 
+  screen_container.style.transform = "translateX(0deg)";
+  console.log("clicked");
+};
 
+// let loadingScreen = document.querySelector(".loading_screen");
+// // let loadingScreen = document.querySelector(".loading_screen");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// let loading = window.addEventListener("load", _ => {
+//   document.body.removeChild(loadingScreen);
+// });

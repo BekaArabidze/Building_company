@@ -1,0 +1,103 @@
+.footer {
+    background-color: white;
+    height: 120vh;
+    width: 100%;
+    position: relative;
+    margin-top: 15rem;
+
+    &_container {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        height: 100%;
+    }
+
+    .section_introduction {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: $dark;
+        z-index: 9;
+
+        .contact_btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                // width: 100%;
+
+
+                &:hover {
+                    // transform: scale(1.01);
+                    background-color: white;
+                    color: $light-orange;
+                    box-shadow: initial;
+                    border: 1px solid $light-orange;
+                }
+            }
+
+        }
+
+
+
+        .paragraph-1 {
+
+            // font-family: "heading-regular";
+            p {
+                text-align: center;
+            }
+        }
+
+        .octagons_img {
+            width: 95%;
+            height: 95%;
+            background: no-repeat url("/pictures/balls.png");
+            background-size: contain;
+            background-position: center;
+            position: absolute;
+            top: -12%;
+            z-index: -1;
+        }
+    }
+
+    .section_contact {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-content: center;
+        color: $dark;
+        // font-family: "paragraph-light";
+        z-index: 9;
+
+        &__navigation {
+            @include flex-template-for-footer;
+        }
+
+        &__networks {
+            @include flex-template-for-footer;
+        }
+
+        &__address {
+            @include flex-template-for-footer;
+        }
+
+        ul {
+            li {
+                list-style-type: none;
+                padding: 1rem;
+
+                a {
+                    text-decoration: none;
+                    // font-family: "paragraph-light";
+                    color: $dark;
+
+
+                }
+            }
+        }
+    }
+}

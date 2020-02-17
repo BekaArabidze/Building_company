@@ -534,7 +534,7 @@ main .about .apartaments_section .bedroom .picture img {
   width: 95%;
   height: 100%;
   border-radius: 14px;
-  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.25);
 }
 main .about .apartaments_section .bedroom .about_room {
   width: 100%;
@@ -548,73 +548,7 @@ main .about .apartaments_section .bedroom .about_room__number {
   opacity: 60%;
   margin-bottom: 1rem;
 }
-main .footer {
-  background-color: white;
-  height: 120vh;
-  width: 100%;
-  position: relative;
-  margin-top: 15rem;
-}
-main .footer_container {
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  height: 100%;
-}
-main .footer .section_introduction {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  color: #000000;
-  z-index: 9;
-}
-main .footer .section_introduction .paragraph-1 p {
-  text-align: center;
-}
-main .footer .section_introduction .octagons_img {
-  width: 95%;
-  height: 95%;
-  background: no-repeat url("/balls.7a81a6f3.png");
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  top: -12%;
-  z-index: -1;
-}
-main .footer .section_contact {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-content: center;
-  color: #000000;
-  z-index: 9;
-}
-main .footer .section_contact__navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main .footer .section_contact__networks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main .footer .section_contact__address {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main .footer .section_contact ul li {
-  list-style-type: none;
-  padding: 1rem;
-}
-main .footer .section_contact ul li a {
-  text-decoration: none;
-  color: #000000;
-}
+
 @media only screen and (max-width: 1500px) {
   .home_button {
     align-self: self-end;
@@ -754,7 +688,7 @@ main .footer .section_contact ul li a {
   justify-content: center;
   height: 8rem;
   padding: 0 2.3vw;
-  z-index: 99;
+  z-index: 30;
   position: fixed;
   top: 0;
   transition: 0.2s all ease-in;
@@ -911,6 +845,98 @@ main .footer .section_contact ul li a {
   .mobile_nav__container .mobile__menu__list__items a:hover {
     color: gray;
   }
+}
+.loading_screen {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  z-index: 999;
+}
+.loading_screen__container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffa800;
+}
+
+.footer {
+  background-color: white;
+  height: 120vh;
+  width: 100%;
+  position: relative;
+  margin-top: 15rem;
+}
+.footer_container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+.footer .section_introduction {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #000000;
+  z-index: 9;
+}
+.footer .section_introduction .contact_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .section_introduction .contact_btn a:hover {
+  background-color: white;
+  color: #ffa800;
+  box-shadow: initial;
+  border: 1px solid #ffa800;
+}
+.footer .section_introduction .paragraph-1 p {
+  text-align: center;
+}
+.footer .section_introduction .octagons_img {
+  width: 95%;
+  height: 95%;
+  background: no-repeat url("/balls.7a81a6f3.png");
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: -12%;
+  z-index: -1;
+}
+.footer .section_contact {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  color: #000000;
+  z-index: 9;
+}
+.footer .section_contact__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .section_contact__networks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .section_contact__address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .section_contact ul li {
+  list-style-type: none;
+  padding: 1rem;
+}
+.footer .section_contact ul li a {
+  text-decoration: none;
+  color: #000000;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
