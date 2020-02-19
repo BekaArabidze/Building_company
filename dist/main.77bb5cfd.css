@@ -449,6 +449,7 @@ main .work_section__gif .video {
 }
 main .about {
   height: 100vh;
+  margin-top: 4rem;
 }
 main .about .main_container {
   width: 100%;
@@ -529,6 +530,7 @@ main .about .apartaments_section .bedroom .picture {
   align-self: center;
   padding: 1.5vw 0vw 0vw 0vw;
   margin-left: 4vw;
+  margin-top: 1rem;
 }
 main .about .apartaments_section .bedroom .picture img {
   width: 95%;
@@ -892,6 +894,9 @@ main .about .apartaments_section .bedroom .about_room__number {
   color: #ffa800;
   box-shadow: initial;
   border: 1px solid #ffa800;
+}
+.footer .section_introduction .paragraph-1 {
+  width: 45%;
 }
 .footer .section_introduction .paragraph-1 p {
   text-align: center;
